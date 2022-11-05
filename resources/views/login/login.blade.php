@@ -2,6 +2,12 @@
 @section('content')
 
     <!-- Content -->
+    @if ($message=session()->has('gagalLogin'))
+      <div class="alert alert-danger alert-dismissible fade show text-center fixed-top" role="alert">
+        <strong>Maaf!</strong> {{ session()->get('gagalLogin') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
     @if ($message=session()->has('succes'))
       <div class="alert alert-primary alert-dismissible fade show text-center fixed-top" role="alert">
         <strong>Selamat!</strong> {{ session()->get('succes') }}
@@ -29,17 +35,25 @@
               <h4 class="mb-2">Selamat Datang 👋</h4>
               <p class="mb-4">Silahkan Masukan Data User Anda</p>
 
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" action="/login" method="POST">
+                @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email or Username</label>
                   <input
-                    type="text"
-                    class="form-control"
+                    type="email"
+                    class="form-control @error('email') is-invalid @enderror"
                     id="email"
-                    name="email-username"
+                    name="email"
                     placeholder="Enter your email or username"
+                    required
+                    value="{{ old('email') }}"
                     autofocus
                   />
+                  @error('email')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
@@ -56,20 +70,26 @@
                       name="password"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password"
+                      required
                     />
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-me" />
                     <label class="form-check-label" for="remember-me"> Ingat Saya </label>
                   </div>
-                </div>
+                </div> --}}
                 <div class="mb-3">
                   <button class="btn btn-primary d-grid w-100" type="submit">Masuk</button>
                 </div>
               </form>
+              <p>
+                <div class="mb-3">
+                  <button class="btn btn-warning d-grid w-100" type="button">Halaman Tamu</button>
+                </div>
+              </p>
 
               <p class="text-center">
                 <span>New on our platform?</span>
