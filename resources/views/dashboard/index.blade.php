@@ -26,108 +26,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mb-4 order-0">
-                        <div class="card">
-                            <div class="d-flex align-items-end row">
-                                <div class="col-sm-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-primary">Selamat Datang
-                                            <b class="text-capitalize"> {{ auth()->user()->name }}</b> 🎉
-                                        </h5>
-                                        <p class="mb-4">
-                                            Silahkan lakukan penginputan data bulanan anda.
-                                        </p>
+                <p></p>
 
-                                        <a href="javascript:;" class="btn btn-sm btn-outline-primary">Ayo Mulai</a>
+                <div class="row mx-0">
+                    {{-- Mid Content --}}
+                    <div class="col-lg-8">
+                        {{-- Welcome --}}
+                        <div class="row mb-4">
+                            <div class="col card">
+                                <div class="d-flex align-items-end row">
+                                    <div class="col-sm-7">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">Selamat Datang
+                                                <b class="text-capitalize"> {{ auth()->user()->name }}</b> 🎉
+                                            </h5>
+                                            <p class="mb-4">
+                                                Silahkan lakukan penginputan data bulanan anda.
+                                            </p>
+
+                                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">Ayo Mulai</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-5 text-center text-sm-left">
-                                    <div class="card-body pb-0 px-0 px-md-4">
-                                        <img src="../assets/img/illustrations/man-with-laptop-light.png" height="140"
-                                            alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png"
-                                            data-app-light-img="illustrations/man-with-laptop-light.png" />
+                                    <div class="col-sm-5 text-center text-sm-left">
+                                        <div class="card-body pb-0 px-0 px-md-4">
+                                            <img src="../assets/img/illustrations/man-with-laptop-light.png" height="140"
+                                                alt="View Badge User"
+                                                data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                                                data-app-light-img="illustrations/man-with-laptop-light.png" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 order-1">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12 col-6 mb-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-title d-flex align-items-start justify-content-between">
-                                            <div class="avatar flex-shrink-0">
-                                                <img src="../assets/img/icons/unicons/building.svg" alt="Ruangan"
-                                                    class="rounded" />
-                                            </div>
-                                            <div class="dropdown">
-                                                <button class="btn p-0" type="button" id="cardOpt3"
-                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                                    <a class="dropdown-item" href="javascript:void(0);">View
-                                                        More</a>
-                                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <span>Ruangan</span>
-                                        <h3 class="card-title mb-1">5</h3>
-                                        <a href="#">
-                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                                Detil</small>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-6 mb-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-title d-flex align-items-start justify-content-between">
-                                            <div class="avatar flex-shrink-0">
-                                                <img src="../assets/img/icons/unicons/water.svg" alt="Sanitasi"
-                                                    class="rounded" />
-                                            </div>
-                                            <div class="dropdown">
-                                                <button class="btn p-0" type="button" id="cardOpt6"
-                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                                    <a class="dropdown-item" href="javascript:void(0);">View
-                                                        More</a>
-                                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <span>Sanitasi</span>
-                                        <h3 class="card-title text-nowrap mb-1">0</h3>
-                                        <a href="#">
-                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
-                                                Detil</small>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Total Revenue -->
-                    <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-
-                        <div class="row">
-                            <div class="col-xl">
+                        {{-- End Welcome --}}
+                        <div class="row mb-4">
+                            <div class="col-card mx-0 px-0">
                                 <h6 class="text-muted">Profil Paud</h6>
-                                <div class="nav-align-top mb-4">
+                                <div class="nav-align-top mx-0 " style="width: 100%;">
                                     <ul class="nav nav-tabs nav-fill" role="tablist">
                                         <li class="nav-item">
                                             <button type="button" class="nav-link active" role="tab"
                                                 data-bs-toggle="tab" data-bs-target="#navs-justified-home"
                                                 aria-controls="navs-justified-home" aria-selected="true">
                                                 <i class="tf-icons bx bx-home"></i> Home
-                                                {{-- <span class="badge rounded-pill badge-center h-px-20 w-px-20 bg-label-danger">3</span> --}}
+
                                             </button>
                                         </li>
                                         <li class="nav-item">
@@ -169,6 +111,177 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- End Mid Content --}}
+
+                    {{-- Right Content --}}
+                    <div class="col-lg">
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title d-flex align-items-start justify-content-between">
+                                            <div class="avatar flex-shrink-0">
+                                                <img src="../assets/img/icons/unicons/building.svg" alt="Ruangan"
+                                                    class="rounded" />
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn p-0" type="button" id="cardOpt3"
+                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                                    <a class="dropdown-item" href="javascript:void(0);">View
+                                                        More</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span>Ruangan</span>
+                                        <h3 class="card-title mb-1">5</h3>
+                                        <a href="#">
+                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
+                                                Detil</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title d-flex align-items-start justify-content-between">
+                                            <div class="avatar flex-shrink-0">
+                                                <img src="../assets/img/icons/unicons/water.svg" alt="Ruangan"
+                                                    class="rounded" />
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn p-0" type="button" id="cardOpt3"
+                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                                    <a class="dropdown-item" href="javascript:void(0);">View
+                                                        More</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span>Sanitasi</span>
+                                        <h3 class="card-title mb-1">2</h3>
+                                        <a href="#">
+                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
+                                                Detil</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title d-flex align-items-start justify-content-between">
+                                            <div class="avatar flex-shrink-0">
+                                                <img src="../assets/img/icons/unicons/users-alt.svg" alt="Ruangan"
+                                                    class="rounded" />
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn p-0" type="button" id="cardOpt3"
+                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                                    <a class="dropdown-item" href="javascript:void(0);">View
+                                                        More</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span>PD</span>
+                                        <h3 class="card-title mb-1">25 <small><sub>Org</sub></small></h3>
+                                        <a href="#">
+                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
+                                                Detil</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title d-flex align-items-start justify-content-between">
+                                            <div class="avatar flex-shrink-0">
+                                                <img src="../assets/img/icons/unicons/user-md.svg" alt="Ruangan"
+                                                    class="rounded" />
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn p-0" type="button" id="cardOpt3"
+                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                                    <a class="dropdown-item" href="javascript:void(0);">View
+                                                        More</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span>PTK</span>
+                                        <h3 class="card-title mb-1">40 <small><sub>Org</sub></small></h3>
+                                        <a href="#">
+                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
+                                                Detil</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- End Right Content --}}
+                </div>
+                {{-- <div class="row">
+                    <div class="col-lg-4 col-md-4 order-1">
+                        <div class="row">
+                            
+                            <div class="col-lg-6 col-md-12 col-6 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title d-flex align-items-start justify-content-between">
+                                            <div class="avatar flex-shrink-0">
+                                                <img src="../assets/img/icons/unicons/water.svg" alt="Sanitasi"
+                                                    class="rounded" />
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn p-0" type="button" id="cardOpt6"
+                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                                                    <a class="dropdown-item" href="javascript:void(0);">View
+                                                        More</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span>Sanitasi</span>
+                                        <h3 class="card-title text-nowrap mb-1">0</h3>
+                                        <a href="#">
+                                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
+                                                Detil</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Total Revenue -->
+                    <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+
+                        <div class="row">
+                            <div class="col-xl">
+                                
                             </div>
                         </div>
 
@@ -234,8 +347,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- </div>
-                            <div class="row"> -->
+
                             <div class="col-12 mb-4">
                                 <div class="card">
                                     <div class="card-body">
@@ -260,7 +372,7 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>                 --}}
             </div>
             <!-- / Content -->
 
