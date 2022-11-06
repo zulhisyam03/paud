@@ -48,12 +48,31 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
 
-    {{-- Loading --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/loading.css') }}">
 </head>
 
-<body>
-    @yield('content')
+<body onload="loading()">
+    <div class="loader-wrap">
+        <div class="loader">
+            <div class="circle-1 circle">
+                <div class="circle-2 circle">
+                    <div class="circle-3 circle">
+                        <div class="circle-4 circle">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar" id="myLoad">
+        <div class="layout-container">
+
+            @yield('content')
+
+        </div>
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
 
     {{-- Bootstrap 5.2 --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> --}}

@@ -19,19 +19,19 @@
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Adventure starts here 🚀</h4>
-              <p class="mb-4">Make your app management easy and fun!</p>
+              <h4 class="mb-2">Silahkan Registrasi 🚀</h4>
+              <p class="mb-4">Permudah Dalam Pelaporan Data Anda!</p>
 
               <form id="formAuthentication" class="mb-3" action="/register" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <label for="username" class="form-label">Username</label>
+                  <label for="username" class="form-label">NAMA SEKOLAH</label>
                   <input
                     type="text"
-                    class="form-control @error('name') is-invalid @enderror text-uppercase"
+                    class="form-control @error('name') is-invalid @enderror text-capitalize"
                     id="username"
                     name="name"
-                    placeholder="Enter your username"
+                    placeholder="Nama Sekolah"
                     autofocus
                   />
                   @error('name')
@@ -42,7 +42,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email" />
+                  <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="example@gmail.com" />
                   @error('email')
                       <div class="feedback-invalid">
                         {{ $message }}
