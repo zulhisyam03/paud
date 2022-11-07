@@ -15,7 +15,17 @@ return new class extends Migration
     {
         Schema::create('sekolahs', function (Blueprint $table) {
             $table->id();
+            $table->integer('npsn')->unique();
+            $table->string('namaSekolah')->unique();         
+            $table->string('status')->nullable();
+            $table->string('statusKepemilikan')->nullable();
+            $table->string('skPendirian')->nullable();
+            $table->date('tglSkPendirian')->nullable();
+            $table->string('skIzinOperasional')->nullable();
+            $table->date('tglSkOperasional')->nullable();
             $table->timestamps();
+
+            $table->foreign('namaSekolah')->references('name')->on('users')->onDelete('cascade');
         });
     }
 

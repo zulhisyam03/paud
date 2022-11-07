@@ -25,6 +25,22 @@
               <form id="formAuthentication" class="mb-3" action="/register" method="POST">
                 @csrf
                 <div class="mb-3">
+                  <label for="npsn" class="form-label">NPSN</label>
+                  <input
+                    type="text"
+                    class="form-control @error('npsn') is-invalid @enderror text-capitalize"
+                    id="npsn"
+                    name="npsn"
+                    placeholder="NPSN"
+                    autofocus
+                  />
+                  @error('npsn')
+                      <div class="feedback-invalid">
+                        {{ $message }}
+                      </div>
+                  @enderror
+                </div>
+                <div class="mb-3">
                   <label for="username" class="form-label">NAMA SEKOLAH</label>
                   <input
                     type="text"

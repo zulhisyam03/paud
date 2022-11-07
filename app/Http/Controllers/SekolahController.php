@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sekolah;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SekolahController extends Controller
@@ -57,9 +58,10 @@ class SekolahController extends Controller
      */
     public function edit(Sekolah $sekolah)
     {
+        $email  =   auth()->user()->email;
         return view('dashboard.profileSekolah',[
             'title'     =>  'Profile Sekolah',
-            'email'     =>  auth()->user()->email
+            'profil'     =>  User::where('email',$email)->get()
         ]);
     }
 

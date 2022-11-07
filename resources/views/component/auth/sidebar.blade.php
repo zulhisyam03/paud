@@ -57,7 +57,7 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item {{ $title === 'Dashboard' ? 'active' : '' }}">
             <a href="/dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
@@ -67,18 +67,18 @@
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Pages</span>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ $title === 'Profile Sekolah' ? 'active' : '' }}  {{ $title === 'Data Pelengkap' ? 'active' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-home"></i>
                 <div data-i18n="Account Settings">Profile</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item {{ $title === 'Profile Sekolah' ? 'active' : '' }}">
                     <a href="/profile/sekolah" class="menu-link">
                         <div data-i18n="Account">Profil Sekolah</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{ $title === 'Data Pelengkap' ? 'active' : '' }}">
                     <a href="pages-account-settings-notifications.html" class="menu-link">
                         <div data-i18n="Notifications">Data Pelengkap</div>
                     </a>
@@ -86,7 +86,7 @@
             </ul>
         </li>
         <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="javascript:void(0);" class="menu-link menu-toggle show" >
                 <i class="menu-icon tf-icons bx bx-data"></i>
                 <div data-i18n="Authentications">Rekapitulasi</div>
             </a>

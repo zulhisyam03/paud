@@ -2,10 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Sekolah extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'npsn',
+        'namaSekolah',
+        'status',
+        'statusKepemilikan',
+        'skPendirian',
+        'tglSkPendirian',
+        'skIzinOperasional',
+        'tglSkOperasional'
+    ];    
+
+    public function userAccount(){
+        return $this->belongsTo(User::class, 'name','namaSekolah');
+    }
 }

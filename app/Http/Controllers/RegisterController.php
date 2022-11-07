@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Sekolah;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -44,12 +45,22 @@ class RegisterController extends Controller
         $validate   =   $request->validate([
             'name'  =>  'required|unique:users',
             'email'     =>  'email:dns|required',
-            'password'  =>  'required|min:6'
+            'password'  =>  'required|min:6',
+            'npsn'      =>  'required|numeric'
         ]);
 
         $validate['password']   =   Hash::make($validate['password']);
 
-        $input  =   User::create($validate);
+        $input  =   User::create([
+            'name'      =>  $validate['name'],
+            'email'      =>  $validate['email'],
+            'password'      =>  $validate['password'],
+        ]);
+        $inputSekolah   =   Sekolah::create([
+            'npsn'      =>  $validate['npsn'],
+            'namaSekolah'   =>  $validate['name']
+        ]);
+
 
         return redirect('/login')->with('succes','Berhasil Daftar Akun, Silahkan Login !!!');
     }
