@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\Kontak;
+use App\Models\Sekolah;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,9 +19,16 @@ class DashboardController extends Controller
     {
         //
         $email  =   auth()->user()->email;
+        $user   =   User::where('email',$email)->get();
+        foreach ($user as $key) {
+            # code...
+            $kontak =   Kontak::where('npsn', $key->sekolahProfil['npsn'])->get();
+        }        
+
         return view('dashboard.index',[
             'title'     =>  'Dashboard',
-            'profil'     =>  User::where('email',$email)->get()
+            'profil'    =>  $user,
+            'kontak'    =>  $kontak
         ]);
     }
 

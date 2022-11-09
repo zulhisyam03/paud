@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Kontak;
 use App\Models\Sekolah;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -42,15 +43,55 @@ class DatabaseSeeder extends Seeder
 
         Sekolah::create([
             'npsn'          =>  '654321',
-            'namaSekolah'   =>  'TK Sekolah 1' 
+            'namaSekolah'   =>  'TK Sekolah 1'
         ]);
         Sekolah::create([
             'npsn'          =>  '654322',
-            'namaSekolah'   =>  'TK Sekolah 2' 
+            'namaSekolah'   =>  'TK Sekolah 2'
         ]);
         Sekolah::create([
             'npsn'          =>  '654323',
-            'namaSekolah'   =>  'TK Sekolah 3' 
+            'namaSekolah'   =>  'TK Sekolah 3'
+        ]);
+
+        Kontak::create([
+            'npsn'       =>  '654321',
+            'alamat'     =>  'JL.Impian No.5',
+            'dusun'      =>  'DUSUN I',
+            'desa'       =>  'Kebanggaan',
+            'rtRw'       =>  '02/12',
+            'kecamatan'  =>  'Bahagia',
+            'kabupaten'  =>  'Indah',
+            'provinsi'   =>  'Keselamatan',
+            'kdPos'      =>  '45633',
+            'lintang'    =>  '-1',
+            'bujur'      =>  '110',
+        ]);
+        Kontak::create([
+            'npsn'       =>  '654322',
+            'alamat'     =>  'JL.Impian No.25',
+            'dusun'      =>  'DUSUN I',
+            'desa'       =>  'Kebanggaan',
+            'rtRw'       =>  '02/12',
+            'kecamatan'  =>  'Bahagia',
+            'kabupaten'  =>  'Indah',
+            'provinsi'   =>  'Keselamatan',
+            'kdPos'      =>  '45633',
+            'lintang'    =>  '-1',
+            'bujur'      =>  '110',
+        ]);
+        Kontak::create([
+            'npsn'       =>  '654323',
+            'alamat'     =>  'JL.Impian No.10',
+            'dusun'      =>  'DUSUN I',
+            'desa'       =>  'Kebanggaan',
+            'rtRw'       =>  '02/12',
+            'kecamatan'  =>  'Bahagia',
+            'kabupaten'  =>  'Indah',
+            'provinsi'   =>  'Keselamatan',
+            'kdPos'      =>  '45633',
+            'lintang'    =>  '-1',
+            'bujur'      =>  '110',
         ]);
     }
 }

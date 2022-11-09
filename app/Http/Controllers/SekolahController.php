@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sekolah;
 use App\Models\User;
+use App\Models\Kontak;
 use Illuminate\Http\Request;
 
 class SekolahController extends Controller
@@ -56,12 +57,25 @@ class SekolahController extends Controller
      * @param  \App\Models\Sekolah  $sekolah
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sekolah $sekolah)
+    public function editProfile(Sekolah $sekolah)
     {
         $email  =   auth()->user()->email;
         return view('dashboard.profileSekolah',[
             'title'     =>  'Profile Sekolah',
             'profil'     =>  User::where('email',$email)->get()
+        ]);
+    }
+    public function editKontak(Sekolah $sekolah)
+    {
+        $email  =   auth()->user()->email;
+        $user   =   User::where('email',$email)->get();
+        foreach ($user as $key) {
+            # code...
+            $kontak =   Kontak::where('npsn', $key->sekolahProfil['npsn'])->get();
+        }
+        return view('dashboard.kontakSekolah',[
+            'title'     =>  'Kontak Sekolah',
+            'kontak'     =>  $kontak
         ]);
     }
 

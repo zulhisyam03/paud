@@ -109,48 +109,50 @@
                                         </div>
                                         <div class="tab-pane fade" id="navs-justified-contact" role="tabpanel">
                                             <p>
-                                            <table class="table table-striped text-wrap text-break">
-                                                <tr>
-                                                    <th>Alamat</th>
-                                                    <td>DUSUN II</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>RT / RW</th>
-                                                    <td>2 / 2</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Dusun</th>
-                                                    <td>Kaleke</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Desa/Kelurahan</th>
-                                                    <td>Kaleke</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Kecamatan</th>
-                                                    <td>Kec.Dolo Barat</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Kabupaten</th>
-                                                    <td>Kab.Sigi</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Provinsi</th>
-                                                    <td>Prov.Sulawesi Tengah</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Kode Pos</th>
-                                                    <td>94361</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Lintang</th>
-                                                    <td>-1</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Bujur</th>
-                                                    <td>119</td>
-                                                </tr>
-                                            </table>
+                                                @foreach ($kontak as $contact)
+                                                    <table class="table table-striped text-wrap text-break">
+                                                        <tr>
+                                                            <th>Alamat</th>
+                                                            <td>{{ $contact->alamat }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>RT / RW</th>
+                                                            <td>{{ $contact->rtRw }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Dusun</th>
+                                                            <td>{{ $contact->dusun }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Desa/Kelurahan</th>
+                                                            <td>{{ $contact->desa }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Kecamatan</th>
+                                                            <td>{{ $contact->kecamatan }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Kabupaten</th>
+                                                            <td>{{ $contact->kabupaten }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Provinsi</th>
+                                                            <td>{{ $contact->provinsi }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Kode Pos</th>
+                                                            <td>{{ $contact->kdPos }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Lintang</th>
+                                                            <td>{{ $contact->lintang }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Bujur</th>
+                                                            <td>{{ $contact->bujur }}</td>
+                                                        </tr>
+                                                    </table>
+                                                @endforeach
                                             </p>
                                         </div>
                                     </div>

@@ -108,8 +108,8 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
-            <a href="#" class="menu-link">
+        <li class="menu-item {{ $title === 'Kontak Sekolah' ? 'active' : '' }}">
+            <a href="/profile/kontak" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-envelope"></i>
                 <div data-i18n="Misc">Kontak</div>
             </a>            

@@ -28,4 +28,5 @@ Route::resource('/register', RegisterController::class)->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);
 Route::post('/logout',[LoginController::class,'logout'])->middleware('auth');
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(('auth'));
-Route::get('/profile/sekolah/',[SekolahController::class,'edit'])->middleware('auth');
+Route::get('/profile/sekolah/',[SekolahController::class,'editProfile'])->middleware('auth');
+Route::get('/profile/kontak/',[SekolahController::class,'editKontak'])->middleware('auth');
