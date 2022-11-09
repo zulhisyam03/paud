@@ -69,87 +69,89 @@
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
                                             <p>
-                                            <table class="table table-striped text-wrap text-break">
-                                                <tr>
-                                                    <th>NPSN</th>
-                                                    <td>40205611</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Status</th>
-                                                    <td>Swasta</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Bentuk Pendidikan</th>
-                                                    <td>TK</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Status Kepemilikan</th>
-                                                    <td>Yayasan</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>SK Pendirian Sekolah</th>
-                                                    <td>828/HK.5/Dikpora/SG/2011</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Tanggal SK Pendirian</th>
-                                                    <td>2011-04-11</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>SK Izin Operasional</th>
-                                                    <td>828/HK.5/Dikpora/SG/2011</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>TAnggal SK Izin Operasional</th>
-                                                    <td>2011-04-11</td>
-                                                </tr>
-                                            </table>
-                                            </p>                                            
+                                                @foreach ($profil as $profile)
+                                                    <table class="table table-striped text-wrap text-break">
+                                                        <tr>
+                                                            <th>NPSN</th>
+                                                            <td>{{ $profile->sekolahProfil['npsn'] }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Status</th>
+                                                            <td>{{ $profile->sekolahProfil['status'] }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Bentuk Pendidikan</th>
+                                                            <td>{{ $profile->sekolahProfil['bentukPendidikan'] }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Status Kepemilikan</th>
+                                                            <td>{{ $profile->sekolahProfil['stsatusKepemilikan'] }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>SK Pendirian Sekolah</th>
+                                                            <td>{{ $profile->sekolahProfil['skPendirian'] }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tanggal SK Pendirian</th>
+                                                            <td>{{ $profile->sekolahProfil['tglSkPendirian'] }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>SK Izin Operasional</th>
+                                                            <td>{{ $profile->sekolahProfil['skIzinOperasional'] }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>TAnggal SK Izin Operasional</th>
+                                                            <td>{{ $profile->sekolahProfil['tglSkOperasional'] }}</td>
+                                                        </tr>
+                                                    </table>
+                                                @endforeach
+                                            </p>
                                         </div>
                                         <div class="tab-pane fade" id="navs-justified-contact" role="tabpanel">
                                             <p>
-                                                <table class="table table-striped text-wrap text-break">
-                                                    <tr>
-                                                        <th>Alamat</th>
-                                                        <td>DUSUN II</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>RT / RW</th>
-                                                        <td>2 / 2</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Dusun</th>
-                                                        <td>Kaleke</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Desa/Kelurahan</th>
-                                                        <td>Kaleke</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Kecamatan</th>
-                                                        <td>Kec.Dolo Barat</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Kabupaten</th>
-                                                        <td>Kab.Sigi</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Provinsi</th>
-                                                        <td>Prov.Sulawesi Tengah</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Kode Pos</th>
-                                                        <td>94361</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Lintang</th>
-                                                        <td>-1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Bujur</th>
-                                                        <td>119</td>
-                                                    </tr>
-                                                </table>
-                                            </p>                                            
+                                            <table class="table table-striped text-wrap text-break">
+                                                <tr>
+                                                    <th>Alamat</th>
+                                                    <td>DUSUN II</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>RT / RW</th>
+                                                    <td>2 / 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Dusun</th>
+                                                    <td>Kaleke</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Desa/Kelurahan</th>
+                                                    <td>Kaleke</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Kecamatan</th>
+                                                    <td>Kec.Dolo Barat</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Kabupaten</th>
+                                                    <td>Kab.Sigi</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Provinsi</th>
+                                                    <td>Prov.Sulawesi Tengah</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Kode Pos</th>
+                                                    <td>94361</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Lintang</th>
+                                                    <td>-1</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Bujur</th>
+                                                    <td>119</td>
+                                                </tr>
+                                            </table>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

@@ -38,7 +38,7 @@
                                                 Sekolah</label>
                                             <div class="col-sm-8">
                                                 <input type="text" class="form-control text-uppercase" name="namaSekolah"
-                                                    id="basic-default-name" placeholder="John Doe" value="{{ $profile->sekolahProfil['namaSekolah'] }}" />
+                                                    id="basic-default-name" placeholder="Nama Sekolah" value="{{ $profile->sekolahProfil['namaSekolah'] }}" />
                                             </div>
                                         </div>
                                         <div class="row mb-3">
