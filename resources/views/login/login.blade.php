@@ -41,11 +41,11 @@
 
                         <form id="formAuthentication" class="mb-3" action="/login" method="POST">
                             @csrf
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email or Username</label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                    id="email" name="email" placeholder="Enter your email or username" required
-                                    value="{{ old('email') }}" autofocus />
+                            <div class="input-group mb-3">
+                                <input type="email" class="rounded @error('email') is-invalid @enderror"
+                                id="email" name="email"  required
+                                value="{{ old('email') }}" autofocus placeholder="example@gmail.com"/>
+                                <label for="email" class="">example@gmail.com</label>
                                 @error('email')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -53,17 +53,16 @@
                                 @enderror
                             </div>
                             <div class="mb-3 form-password-toggle">
-                                <div class="d-flex justify-content-between">
-                                    <label class="form-label" for="password">Password</label>
+                                <div class="d-flex justify-content-between">                                    
                                     <a href="auth-forgot-password-basic.html">
                                         <small>Lupa Password?</small>
-                                    </a>
+                                    </a>                                    
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="form-control" name="password"
-                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                        aria-describedby="password" required />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                    <input type="password" id="password" class="rounded" name="password"                                    
+                                        aria-describedby="password" required placeholder="Password"/>     
+                                        <span class="input-group-text cursor-pointer position-absolute top-50 end-0 translate-middle-y" style="background: none;border:none;"><i class="bx bx-hide"></i></span>                               
+                                    <label class="" for="password">Password</label>
                                 </div>
                             </div>
                             {{-- <div class="mb-3">

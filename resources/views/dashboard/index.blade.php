@@ -85,7 +85,7 @@
                                                         </tr>
                                                         <tr>
                                                             <th>Status Kepemilikan</th>
-                                                            <td>{{ $profile->sekolahProfil['stsatusKepemilikan'] }}</td>
+                                                            <td>{{ $profile->sekolahProfil['statusKepemilikan'] }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>SK Pendirian Sekolah</th>

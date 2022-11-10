@@ -48,6 +48,43 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
 
+    <style>
+        .input-group{
+            position: relative;
+        }
+        .input-group input{
+            border: solid 1.5px #646464b6;
+            /* height: 40px; */
+            width: 100%;               
+            position: relative;
+            padding: 0.5rem;
+            font-size:1rem;
+            color: #f5f5f5;
+            transition: 150ms cubic-bezier(0.4,0,0.2,1);
+        }
+        .input-group label{
+            position: absolute;
+            left:16px;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(0.5rem);
+            transition:150ms cubic-bezier(0.4,0,0.2,1);
+        }
+        input:focus{
+            outline: none;
+            border: 1.5px solid #1a73e8;
+            background-color: #020e26;
+        }
+        input:focus ~ label{
+            visibility: inherit;
+            border: 1.5px solid #1a73e8;
+            transform: translateY(-50%) scale(0.8);
+            background-color: #020e26;
+            padding: 0 0.2em;
+            color: #2196f3;
+        }
+    </style>
+
 </head>
 
 <body onload="loading()">

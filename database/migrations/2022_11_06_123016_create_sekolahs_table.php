@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('npsn')->unique();
             $table->string('namaSekolah')->unique();         
             $table->string('status')->nullable();
+            $table->string('bentukPendidikan')->nullable();
             $table->string('statusKepemilikan')->nullable();
             $table->string('skPendirian')->nullable();
             $table->date('tglSkPendirian')->nullable();

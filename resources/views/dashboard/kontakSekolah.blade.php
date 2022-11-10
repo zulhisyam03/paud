@@ -18,7 +18,7 @@
                     <span class="text-muted mb-1">Profile <i class='bx bx-chevrons-right'></i>
                         <b>{{ $title }}</b></span>
 
-                    <div class="col-lg-8">
+                    <div class="col-lg-8 mb-4">
                         <div class="row">
                             <div class="col card">
                                 <label class="card-title pt-3 ps-3 pb-0 h5">{{ $title }}</label>

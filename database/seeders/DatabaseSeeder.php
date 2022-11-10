@@ -42,16 +42,37 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Sekolah::create([
-            'npsn'          =>  '654321',
-            'namaSekolah'   =>  'TK Sekolah 1'
+            'npsn'                  =>  '654321',
+            'namaSekolah'           =>  'TK Sekolah 1',
+            'status'                =>  "Swasta",
+            'bentukPendidikan'      =>  "TK",
+            'statusKepemilikan'     =>  "Yayasan",
+            'skPendirian'           =>  "1029/HK.5/Dikpora/SG/2011",
+            'tglSkPendirian'        =>  "2011-05-11",
+            'skIzinOperasional'     =>  "420.1/05/DPMPTSP.SG/II/2022",
+            'tglSkOperasional'      =>  "2021-04-07",
         ]);
         Sekolah::create([
-            'npsn'          =>  '654322',
-            'namaSekolah'   =>  'TK Sekolah 2'
+            'npsn'                  =>  '654322',
+            'namaSekolah'           =>  'TK Sekolah 2',
+            'status'                =>  "Swasta",
+            'bentukPendidikan'      =>  "TK",
+            'statusKepemilikan'     =>  "Lainnya",
+            'skPendirian'           =>  "1029/HK.5/Dikpora/SG/2011",
+            'tglSkPendirian'        =>  "2011-05-11",
+            'skIzinOperasional'     =>  "420.1/05/DPMPTSP.SG/II/2022",
+            'tglSkOperasional'      =>  "2021-04-07",
         ]);
         Sekolah::create([
-            'npsn'          =>  '654323',
-            'namaSekolah'   =>  'TK Sekolah 3'
+            'npsn'                  =>  '654323',
+            'namaSekolah'           =>  'TK Sekolah 3',
+            'status'                =>  "Swasta",
+            'bentukPendidikan'      =>  "TK",
+            'statusKepemilikan'     =>  "Yayasan",
+            'skPendirian'           =>  "823.3/320 -SB",
+            'tglSkPendirian'        =>  "2007-07-10",
+            'skIzinOperasional'     =>  "2147483647",
+            'tglSkOperasional'      =>  "2019-09-09",
         ]);
 
         Kontak::create([
