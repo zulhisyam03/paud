@@ -85,25 +85,30 @@
                 </li>                
             </ul>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ $title === 'Data PTK' ? 'active' : '' }} {{ $title === 'Data PD' ? 'active' : '' }} {{ $title === 'Data Sarpras' ? 'active' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle show" >
                 <i class="menu-icon tf-icons bx bx-data"></i>
                 <div data-i18n="Authentications">Rekapitulasi</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="auth-login-basic.html" class="menu-link" target="_blank">
+                <li class="menu-item {{ $title === 'Data PTK' ? 'active' : '' }}">
+                    <a href="auth-login-basic.html" class="menu-link" target="">
                         <div data-i18n="Basic">Data PTK</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                <li class="menu-item {{ $title === 'Data PD' ? 'active' : '' }}">
+                    <a href="auth-register-basic.html" class="menu-link" target="">
                         <div data-i18n="Basic">Data PD</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
+                <li class="menu-item {{ $title === 'Data Sarpras' ? 'active' : '' }}">
+                    <a href="auth-forgot-password-basic.html" class="menu-link" target="">
                         <div data-i18n="Basic">Data Sarpras</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="auth-forgot-password-basic.html" class="menu-link" target="">
+                        <div data-i18n="Basic">Data Sanitasi</div>
                     </a>
                 </li>
             </ul>

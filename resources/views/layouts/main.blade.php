@@ -59,8 +59,11 @@
             position: relative;
             padding: 0.5rem;
             font-size:1rem;
-            color: #f5f5f5;
+            color: #181515;
             transition: 150ms cubic-bezier(0.4,0,0.2,1);
+        }
+        .input-group input:focus{
+            color: white;
         }
         .input-group label{
             position: absolute;
