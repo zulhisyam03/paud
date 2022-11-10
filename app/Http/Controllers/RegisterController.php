@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\DataPelengkap;
+use App\Models\Kontak;
+use App\Models\Sekolah;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Sekolah;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -59,6 +61,12 @@ class RegisterController extends Controller
         $inputSekolah   =   Sekolah::create([
             'npsn'      =>  $validate['npsn'],
             'namaSekolah'   =>  $validate['name']
+        ]);
+        $inputKontak    =   Kontak::create([
+            'npsn'      =>  $validate['npsn']
+        ]);
+        $inputDataPelengkap =   DataPelengkap::create([
+            'npsnSekolah'   =>  $validate['npsn']
         ]);
 
 

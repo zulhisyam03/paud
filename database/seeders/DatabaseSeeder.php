@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\DataPelengkap;
 use App\Models\Kontak;
 use App\Models\Sekolah;
 use App\Models\User;
@@ -44,6 +45,8 @@ class DatabaseSeeder extends Seeder
         Sekolah::create([
             'npsn'                  =>  '654321',
             'namaSekolah'           =>  'TK Sekolah 1',
+            'akreditas'             =>  'Akreditasi B',
+            'kurikulum'             =>  'Kurikulum 2013',
             'status'                =>  "Swasta",
             'bentukPendidikan'      =>  "TK",
             'statusKepemilikan'     =>  "Yayasan",
@@ -55,6 +58,8 @@ class DatabaseSeeder extends Seeder
         Sekolah::create([
             'npsn'                  =>  '654322',
             'namaSekolah'           =>  'TK Sekolah 2',
+            'akreditas'             =>  'Akreditasi B',
+            'kurikulum'             =>  'Kurikulum 2013',
             'status'                =>  "Swasta",
             'bentukPendidikan'      =>  "TK",
             'statusKepemilikan'     =>  "Lainnya",
@@ -66,6 +71,8 @@ class DatabaseSeeder extends Seeder
         Sekolah::create([
             'npsn'                  =>  '654323',
             'namaSekolah'           =>  'TK Sekolah 3',
+            'akreditas'             =>  'Akreditasi B',
+            'kurikulum'             =>  'Kurikulum 2013',
             'status'                =>  "Swasta",
             'bentukPendidikan'      =>  "TK",
             'statusKepemilikan'     =>  "Yayasan",
@@ -113,6 +120,16 @@ class DatabaseSeeder extends Seeder
             'kdPos'      =>  '45633',
             'lintang'    =>  '-1',
             'bujur'      =>  '110',
+        ]);
+
+        DataPelengkap::create([
+            'npsnSekolah'   =>  '654321'
+        ]);
+        DataPelengkap::create([
+            'npsnSekolah'   =>  '654322'
+        ]);
+        DataPelengkap::create([
+            'npsnSekolah'   =>  '654323'
         ]);
     }
 }

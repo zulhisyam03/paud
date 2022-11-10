@@ -30,4 +30,8 @@ class Sekolah extends Model
     public function kontak(){
         return $this->hasOne(Kontak::class,'npsn', 'npsn');
     }
+
+    public function pelengkap(){
+        return $this->hasOne(DataPelengkap::class,'npsnSekolah', 'npsn');
+    }
 }

@@ -46,12 +46,35 @@
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-sm-4 col-form-label"
+                                                    for="basic-default-name">Akreditasi</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-select" name="akreditas" id="">
+                                                        <option disabled selected hidden>{{ $profile->sekolahProfil['akreditas'] != '' ? $profile->sekolahProfil['akreditas'] : 'Pilih...' }}</option>
+                                                        <option value="Akreditasi A">Akreditasi A</option>
+                                                        <option value="Akreditasi B">Akreditasi B</option>
+                                                        <option value="Akreditasi B">Akreditasi B</option>
+                                                        <option value="Belum Terakreditasi">Belum Terakreditasi</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label class="col-sm-4 col-form-label"
+                                                    for="basic-default-name">Kurikulum</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-select" name="kurikulum" id="">
+                                                        <option disabled selected hidden>{{ $profile->sekolahProfil['kurikulum'] != '' ? $profile->sekolahProfil['kurikulum'] : 'Pilih...' }}</option>
+                                                        <option value="Kurikulum 2013">Kurikulum 2013</option>                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label class="col-sm-4 col-form-label"
                                                     for="basic-default-name">Status</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-select" name="status" id="">
-                                                        <option value="">Pilih...</option>
+                                                        <option disabled selected hidden>{{ $profile->sekolahProfil['status'] != '' ? $profile->sekolahProfil['status'] : 'Pilih...' }}</option>
                                                         <option value="Swasta">Swasta</option>
-                                                        <option value="Negeri">Negeri...</option>
+                                                        <option value="Negeri">Negeri</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -60,7 +83,7 @@
                                                     Pendidikan</label>
                                                 <div class="col-sm-8">
                                                     <select name="bentukPendidikan" class="form-select" id="">
-                                                        <option value="">Pilih...</option>
+                                                        <option disabled selected hidden>{{ $profile->sekolahProfil['status'] != '' ? $profile->sekolahProfil['bentukPendidikan'] : 'Pilih...' }}</option>
                                                         <option value="TK">TK</option>
                                                         <option value="SD">SD</option>
                                                         <option value="SMP">SMP</option>
@@ -69,10 +92,10 @@
                                             </div>
                                             <div class="row mb-3">
                                                 <label class="col-sm-4 col-form-label" for="basic-default-name">Status
-                                                    Kepelmilikan</label>
+                                                    Kepemilikan</label>
                                                 <div class="col-sm-8">
                                                     <select name="statsuKepemilikan" class="form-select" id="">
-                                                        <option value="">Pilih...</option>
+                                                        <option disabled selected hidden>{{ $profile->sekolahProfil['status'] != '' ? $profile->sekolahProfil['statusKepemilikan'] : 'Pilih...' }}</option>
                                                         <option value="Yayasan">Yayasan</option>
                                                         <option value="Negeri">Negeri</option>
                                                     </select>
@@ -93,7 +116,7 @@
                                                     pendirian
                                                     Sekolah</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="tglSkPendirian"
+                                                    <input type="date" class="form-control" name="tglSkPendirian"
                                                         id="basic-default-name" placeholder="2022-01-01"
                                                         value="{{ $profile->sekolahProfil['tglSkPendirian'] }}" />
                                                 </div>
@@ -105,7 +128,7 @@
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" name="skIzinOperasional"
                                                         id="basic-default-name" placeholder="SK Izin Operasional"
-                                                        value="{{ $profile->sekolahProfil['skIziniOPerasional'] }}" />
+                                                        value="{{ $profile->sekolahProfil['skIzinOperasional'] }}" />
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -113,9 +136,9 @@
                                                     izin operasional
                                                     Sekolah</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="tglSkOperasional"
+                                                    <input type="date" class="form-control" name="tglSkOperasional"
                                                         id="basic-default-name" placeholder="2022-01-01"
-                                                        value="{{ $profile->sekolahProfil['tglIzinOperasional'] }}" />
+                                                        value="{{ $profile->sekolahProfil['tglSkOperasional'] }}" />
                                                 </div>
                                             </div>
                                             <div class="row mb-3">

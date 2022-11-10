@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li class="menu-item {{ $title === 'Data Pelengkap' ? 'active' : '' }}">
-                    <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <a href="/profile/dataPelengkap" class="menu-link">
                         <div data-i18n="Notifications">Data Pelengkap</div>
                     </a>
                 </li>                

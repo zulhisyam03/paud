@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sekolah;
 use App\Models\User;
 use App\Models\Kontak;
+use App\Models\Sekolah;
 use Illuminate\Http\Request;
+use App\Models\DataPelengkap;
+use App\Http\Controllers\Controller;
 
 class SekolahController extends Controller
 {
@@ -76,6 +78,19 @@ class SekolahController extends Controller
         return view('dashboard.kontakSekolah',[
             'title'     =>  'Kontak Sekolah',
             'kontak'     =>  $kontak
+        ]);
+    }
+
+    public function editPelengkap(){
+        $email  =   auth()->user()->email;
+        $user   =   User::where('email',$email)->get();
+        foreach ($user as $key) {
+            # code...
+            $dataPelengkap =   DataPelengkap::where('npsnSekolah', $key->sekolahProfil['npsn'])->get();
+        }
+        return view('dashboard.dataPelengkap',[
+            'title'         =>  'Data Pelengkap',
+            'dataPelengkap' =>  $dataPelengkap
         ]);
     }
 
