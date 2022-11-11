@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SekolahController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +31,6 @@ Route::post('/logout',[LoginController::class,'logout'])->middleware('auth');
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(('auth'));
 Route::get('/profile/sekolah/',[SekolahController::class,'editProfile'])->middleware('auth');
 Route::get('/profile/dataPelengkap/',[SekolahController::class,'editPelengkap'])->middleware('auth');
+Route::get('/profile/dataPtk/',[PegawaiController::class,'index'])->middleware('auth');
 Route::get('/profile/kontak/',[SekolahController::class,'editKontak'])->middleware('auth');
 

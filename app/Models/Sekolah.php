@@ -34,4 +34,8 @@ class Sekolah extends Model
     public function pelengkap(){
         return $this->hasOne(DataPelengkap::class,'npsnSekolah', 'npsn');
     }
+
+    public function pegawai(){
+        return $this->hasMany(Pegawai::class,'npsnSekolah','npsn');
+    }
 }

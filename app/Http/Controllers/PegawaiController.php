@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -14,7 +15,18 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        //
+        $email  =   auth()->user()->email;
+        $user   =   User::where('email',$email)->get();
+        foreach ($user as $key) {
+            # code...
+            $pegawai =   Pegawai::where('npsnSekolah', $key->sekolahProfil['npsn'])->get();
+            $npsn   =    $key->sekolahProfil['npsn'];
+        }
+        return view('dashboard.pegawai',[
+            'title'         =>  'Data PTK',
+            'npsnSekolah'      =>   $npsn,
+            'pegawai' =>  $pegawai
+        ]);
     }
 
     /**

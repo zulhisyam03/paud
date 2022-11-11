@@ -92,7 +92,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item {{ $title === 'Data PTK' ? 'active' : '' }}">
-                    <a href="auth-login-basic.html" class="menu-link" target="">
+                    <a href="/profile/dataPtk" class="menu-link" target="">
                         <div data-i18n="Basic">Data PTK</div>
                     </a>
                 </li>
