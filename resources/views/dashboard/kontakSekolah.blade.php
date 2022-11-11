@@ -139,7 +139,9 @@
                     {{-- End Mid Content --}}
 
                     {{-- Right Content --}}
-                    @include('component.auth.rightContent')
+                    <div class="col-lg pe-0">
+                        @include('component.auth.rightContent')
+                    </div>
                     {{-- End Right Content --}}
                 </div>
             </div>

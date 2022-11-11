@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\DataPelengkap;
 use App\Models\Kontak;
 use App\Models\Sekolah;
 use App\Models\User;
@@ -22,7 +23,8 @@ class DashboardController extends Controller
         $user   =   User::where('email',$email)->get();
         foreach ($user as $key) {
             # code...
-            $kontak =   Kontak::where('npsn', $key->sekolahProfil['npsn'])->get();
+            $kontak     =   Kontak::where('npsn', $key->sekolahProfil['npsn'])->get();
+            $pelengkap  =   DataPelengkap::where('npsn', $key->sekolahProfil['npsn'])->get();
         }        
 
         return view('dashboard.index',[
