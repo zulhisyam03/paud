@@ -25,58 +25,58 @@
                                 <div class="card-body">
                                     <button class="btn btn-warning" id="btnInputPegawai">+ Tambah Pegawai </button>
                                     {{-- FORM INPUT DATA PEGAWAI --}}
-                                    <form action="/profile/sekolah" method="POST" class="formInput">
+                                    <form id="formInputPegawai" class="formInput">
                                         @csrf
                                         <div class="row mb-3">
-                                            <label class="col-sm-4 col-form-label" for="basic-default-name">NPSN</label>
+                                            <label class="col-sm-4 col-form-label" for="">NPSN</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="npsn" class="form-control"
-                                                    id="basic-default-name" placeholder="NPSN"
+                                                    id="npsn" placeholder="NPSN"
                                                     value="{{ $npsnSekolah }}" />
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label class="col-sm-4 col-form-label" for="basic-default-name">ID
+                                            <label class="col-sm-4 col-form-label" for="">ID
                                                 Pegawai</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="idPegawai" class="form-control"
-                                                    id="basic-default-name" placeholder="ID Pegawai" />
+                                                    id="idPegawai" placeholder="ID Pegawai" />
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label class="col-sm-4 col-form-label" for="basic-default-name">Nama
+                                            <label class="col-sm-4 col-form-label" for="">Nama
                                                 Pegawai</label>
                                             <div class="col-sm-8">
                                                 <input type="text" class="form-control text-uppercase" name="namaSekolah"
-                                                    id="basic-default-name" placeholder="Nama Sekolah" />
+                                                    id="namaSekolah" placeholder="Nama Sekolah" />
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label class="col-sm-4 col-form-label" for="basic-default-name">Tempat,
+                                            <label class="col-sm-4 col-form-label" for="">Tempat,
                                                 Tgl.Lahir</label>
                                             <div class="col-sm-4">
-                                                <input type="text" name="tempatLahir" id=""
+                                                <input type="text" name="tempatLahir" id="tempatLahir"
                                                     class="col-sm-3 form-control" placeholder="Tempat Lahir">
                                             </div>
                                             <div class="col-sm-4">
                                                 <input type="date" class="form-control " name="tglLahir"
-                                                    id="" placeholder="1995/05/03" />
+                                                    id="tglLahir" placeholder="1995/05/03" />
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label"
-                                                for="basic-default-name">No.Handphone</label>
+                                                for="">No.Handphone</label>
                                             <div class="col-sm-8">
                                                 <input type="text" class="form-control"
                                                     onkeypress="return hanyaAngka(event)"
-                                                    name="noHp" id="basic-default-name" placeholder="082212345633" />
+                                                    name="noHp" id="noHp" placeholder="082212345633" />
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label" for="basic-default-jk">Jenis
                                                 Kelamin</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="jk" id="">
+                                                <select class="form-select" name="jk" id="jk">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="Laki-Laki">Laki-Laki</option>
                                                     <option value="Perempuan">Perempuan</option>
@@ -87,7 +87,7 @@
                                             <label class="col-sm-4 col-form-label"
                                                 for="basic-default-jabatan">Jabatan</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="jabatan" id="">
+                                                <select class="form-select" name="jabatan" id="jabatan">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="Guru">Guru</option>
                                                     <option value="Staf TU">Staf TU</option>
@@ -99,7 +99,7 @@
                                             <label class="col-sm-4 col-form-label"
                                                 for="basic-default-golongan">Golongan</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="golongan" id="">
+                                                <select class="form-select" name="golongan" id="golongan">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="III A">III A</option>
                                                     <option value="III C">III C</option>
@@ -111,7 +111,7 @@
                                             <label class="col-sm-4 col-form-label" for="basic-default-status">Status
                                                 Kepegawaian</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="status" id="">
+                                                <select class="form-select" name="status" id="status">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="PNS">PNS</option>
                                                     <option value="Non PNS">Non PNS</option>
@@ -122,7 +122,7 @@
                                             <label class="col-sm-4 col-form-label" for="basic-default-pt">Pendidikan
                                                 Terakhir</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="pT" id="">
+                                                <select class="form-select" name="pT" id="pT">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="S2">S2</option>
                                                     <option value="S1">S1</option>
@@ -134,7 +134,7 @@
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-sm-12 text-end">
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="submit" id="btnSimpanPegawai" class="btn btn-primary">Simpan</button>
                                                 <button type="reset" class="btn btn-danger">Batal</button>
                                             </div>
                                         </div>

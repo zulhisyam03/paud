@@ -159,6 +159,47 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+    {{-- Script Simpan DataPegawai Jquery --}}
+    <script>
+        $('#btnSimpanPegawai').click(function(){
+            //validasi Form
+            $('#formInputPegawai').validate({
+                submitHandler: function(form){
+                    $.ajax({
+                        type:'POST',
+                        url:"/Data/Pegawai",
+                        data: $('formInputPegawai').serialize(),
+                        success: function(){
+                            update()
+                        }
+                    });
+                    document.getElementById("idPegawai").value  =   "";
+                    document.getElementById("namaPegawai").value  =   "";
+                    document.getElementById("jk").value  =   "";
+                    document.getElementById("tempatLahir").value  =   "";
+                    document.getElementById("tglLahir").value  =   "";
+                    document.getElementById("jabatan").value  =   "";
+                    document.getElementById("golongan").value  =   "";
+                    document.getElementById("status").value  =   "";
+                    document.getElementById("pT").value  =   "";
+                    document.getElementById("noHp").value  =   "";
+                    return false;
+                }
+            });
+        });
+
+        // Buat Fungsi Refresh Data Pegawai
+        function update(){
+            $.ajax({
+                url: "/Data/Pegawai",
+                type:'get',
+                success:function(data){
+                    $('#dataPegawai').html(data);
+                }
+            });
+        }
+    </script>
+
     <script>
         // Data Table
         $(document).ready(function() {
