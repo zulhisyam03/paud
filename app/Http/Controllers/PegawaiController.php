@@ -48,6 +48,19 @@ class PegawaiController extends Controller
     public function store(Request $request)
     {
         //
+        $validasi   =   $request->validate([
+            'npsn'          =>  'required',
+            'namaPegawai'   =>  'required',
+            'jk'            =>  'required',
+            'jabatan'       =>  'required',
+            'tempatLahir'   =>  'required',
+            'tglLahir'      =>  'required',
+            'noHp'          =>  'required'
+        ]);
+
+        Pegawai::create($validasi);
+
+        return view('dashboard.dataPegawai');
     }
 
     /**

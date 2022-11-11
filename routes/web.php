@@ -32,5 +32,6 @@ Route::get('/dashboard', [DashboardController::class,'index'])->middleware(('aut
 Route::get('/profile/sekolah/',[SekolahController::class,'editProfile'])->middleware('auth');
 Route::get('/profile/dataPelengkap/',[SekolahController::class,'editPelengkap'])->middleware('auth');
 Route::get('/profile/dataPtk/',[PegawaiController::class,'index'])->middleware('auth');
+Route::post('/Data/Pegawai/',[PegawaiController::class,'store'])->middleware('auth');
 Route::get('/profile/kontak/',[SekolahController::class,'editKontak'])->middleware('auth');
 
