@@ -58,7 +58,7 @@ class PegawaiController extends Controller
             'noHp'          =>  'required'
         ]);
 
-        Pegawai::create($validasi);
+        Pegawai::create($request);
 
         return view('dashboard.dataPegawai');
     }

@@ -11,13 +11,17 @@
         </tr>
     </thead>
     <tbody>
+        @php
+            $no = 1;
+        @endphp
         @foreach ($pegawai as $item)
             <tr>
+                <td>{{ $no++ }}</td>
                 <td>{{ $item['idPegawai'] }}</td>
                 <td>{{ $item['namaPegawai'] }}</td>
                 <td>{{ $item['jabatan'] }}</td>
                 <td>{{ $item['noHp'] }}</td>
-                <td>{{ $item['Status'] }}</td>
+                <td>{{ $item['status'] }}</td>
                 <td>-</td>
             </tr>
         @endforeach

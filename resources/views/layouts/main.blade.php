@@ -160,7 +160,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     {{-- Script Simpan DataPegawai Jquery --}}
-    <script>
+    {{-- <script>
         $('#btnSimpanPegawai').click(function(){
             //validasi Form
             $('#formInputPegawai').validate({
@@ -191,14 +191,14 @@
         // Buat Fungsi Refresh Data Pegawai
         function update(){
             $.ajax({
-                url: "/Data/Pegawai",
+                url: '/Data/Pegawai',
                 type:'get',
                 success:function(data){
                     $('#dataPegawai').html(data);
                 }
             });
         }
-    </script>
+    </script> --}}
 
     <script>
         // Data Table

@@ -25,7 +25,7 @@
                                 <div class="card-body">
                                     <button class="btn btn-warning" id="btnInputPegawai">+ Tambah Pegawai </button>
                                     {{-- FORM INPUT DATA PEGAWAI --}}
-                                    <form id="formInputPegawai" class="formInput">
+                                    <form action="/Data/Pegawai" method="POST" id="formInputPegawai" class="formInput">
                                         @csrf
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label" for="">NPSN</label>
@@ -143,9 +143,7 @@
                                     <br>
                                     <hr>
                                     {{-- Table Data Pegawai --}}
-                                    <div id="dataPegawai">
-
-                                    </div>
+                                    @include('dashboard.dataPegawai')
                                 </div>
                             </div>
                         </div>
