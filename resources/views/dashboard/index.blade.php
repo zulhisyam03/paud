@@ -65,6 +65,13 @@
                                                 <i class='bx bx-envelope'></i> Kontak
                                             </button>
                                         </li>
+                                        <li class="nav-item">
+                                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
+                                                data-bs-target="#navs-justified-pelengkap"
+                                                aria-controls="navs-justified-pelengkap" aria-selected="false">
+                                                <i class='bx bx-wallet'></i> Data Pelengkap
+                                            </button>
+                                        </li>
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="navs-justified-home" role="tabpanel">
@@ -151,6 +158,30 @@
                                                             <th>Bujur</th>
                                                             <td>{{ $contact->bujur }}</td>
                                                         </tr>
+                                                    </table>
+                                                @endforeach
+                                            </p>
+                                        </div>
+                                        <div class="tab-pane fade" id="navs-justified-pelengkap" role="tabpanel">
+                                            <p>
+                                                @foreach ($pelengkap as $item)
+                                                    <table class="table table-striped text-wrap text-break">
+                                                        <tr>
+                                                            <th>Kebutuhan Khusus Dilayani</th>
+                                                            <td>{{ $item->kkd }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Nama Bank</th>
+                                                            <td>{{ $item->namaBank }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Cabang KC/Unit</th>
+                                                            <td>{{ $item->cabangBank }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Rekening Atas Nama</th>
+                                                            <td>{{ $item->noRek.' '.$item->nama }}</td>
+                                                        </tr>                                                        
                                                     </table>
                                                 @endforeach
                                             </p>

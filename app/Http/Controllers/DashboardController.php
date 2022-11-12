@@ -24,13 +24,14 @@ class DashboardController extends Controller
         foreach ($user as $key) {
             # code...
             $kontak     =   Kontak::where('npsn', $key->sekolahProfil['npsn'])->get();
-            $pelengkap  =   DataPelengkap::where('npsn', $key->sekolahProfil['npsn'])->get();
+            $pelengkap  =   DataPelengkap::where('npsnSekolah', $key->sekolahProfil['npsn'])->get();
         }        
 
         return view('dashboard.index',[
             'title'     =>  'Dashboard',
             'profil'    =>  $user,
-            'kontak'    =>  $kontak
+            'kontak'    =>  $kontak,
+            'pelengkap' =>  $pelengkap
         ]);
     }
 

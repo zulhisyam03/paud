@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('kkd')->nullable();
             $table->string('namaBank')->nullable();
             $table->string('cabangBank')->nullable();
+            $table->integer('noRek')->nullable();
             $table->string('nama')->nullable();
             $table->timestamps();
 
