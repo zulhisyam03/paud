@@ -8,6 +8,7 @@ use App\Models\DataPelengkap;
 use App\Models\Kontak;
 use App\Models\Sekolah;
 use App\Models\User;
+use App\Models\Pegawai;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,7 +20,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -131,5 +132,7 @@ class DatabaseSeeder extends Seeder
         DataPelengkap::create([
             'npsnSekolah'   =>  '654323'
         ]);
+
+        Pegawai::factory(25)->create();
     }
 }

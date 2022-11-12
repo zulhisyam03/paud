@@ -49,18 +49,22 @@ class PegawaiController extends Controller
     {
         //
         $validasi   =   $request->validate([
-            'npsn'          =>  'required',
+            'npsnSekolah'   =>  'required',
+            'idPegawai'     =>  'nullable',
             'namaPegawai'   =>  'required',
             'jk'            =>  'required',
             'jabatan'       =>  'required',
+            'golongan'      =>  'required',
             'tempatLahir'   =>  'required',
             'tglLahir'      =>  'required',
-            'noHp'          =>  'required'
-        ]);
+            'noHp'          =>  'required',
+            'status'        =>  'required',
+            'pT'            =>  'required',
+        ]);        
 
-        Pegawai::create($request);
+        Pegawai::create($validasi);
 
-        return view('dashboard.dataPegawai');
+        return redirect('/profile/dataPtk')->with('succes','Data Pegawai Berhasil Di Tambahkan !!!');
     }
 
     /**

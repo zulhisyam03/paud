@@ -59,9 +59,14 @@
                                             </div>                                            
                                             <div class="row mb-3">
                                                 <label class="col-sm-4 col-form-label" for="basic-default-name">Rekening Atas Nama</label>
-                                                <div class="col-sm-8">
+                                                <div class="col-sm-2">
+                                                    <input type="text" class="form-control" name="noRek"
+                                                        id="basic-default-noRek" placeholder="No Rek..."
+                                                        value="{{ $item->noRek }}" onkeypress="return hanyaAngka(event)"/>
+                                                </div>
+                                                <div class="col-sm">
                                                     <input type="text" class="form-control" name="nama"
-                                                        id="basic-default-name" placeholder="Nama..."
+                                                        id="basic-default-name" placeholder="Atas Nama..."
                                                         value="{{ $item->nama }}" />
                                                 </div>
                                             </div>

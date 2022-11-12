@@ -1,4 +1,4 @@
-<table id="example" class="table table-striped">
+<table id="" class="table table-striped text-wrap">
     <thead>
         <tr>
             <th>#</th>
@@ -18,11 +18,13 @@
             <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $item['idPegawai'] }}</td>
-                <td>{{ $item['namaPegawai'] }}</td>
+                <td class="text-capitalize">{{ $item['namaPegawai'] }}</td>
                 <td>{{ $item['jabatan'] }}</td>
                 <td>{{ $item['noHp'] }}</td>
                 <td>{{ $item['status'] }}</td>
-                <td>-</td>
+                <td>
+                    <a href=""><i class='bx bx-show' alt="Lihat"></i></a>
+                </td>
             </tr>
         @endforeach
     </tbody>

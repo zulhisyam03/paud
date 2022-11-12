@@ -25,12 +25,12 @@
                                 <div class="card-body">
                                     <button class="btn btn-warning" id="btnInputPegawai">+ Tambah Pegawai </button>
                                     {{-- FORM INPUT DATA PEGAWAI --}}
-                                    <form action="/Data/Pegawai" method="POST" id="formInputPegawai" class="formInput">
+                                    <form action="/Data/Pegawai" method="POST" id="" class="formInput">
                                         @csrf
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label" for="">NPSN</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="npsn" class="form-control"
+                                                <input type="text" name="npsnSekolah" class="form-control @error('npsnSekolah') is-invalid @enderror"
                                                     id="npsn" placeholder="NPSN"
                                                     value="{{ $npsnSekolah }}" />
                                             </div>
@@ -39,44 +39,49 @@
                                             <label class="col-sm-4 col-form-label" for="">ID
                                                 Pegawai</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="idPegawai" class="form-control"
-                                                    id="idPegawai" placeholder="ID Pegawai" />
+                                                <input type="text" name="idPegawai" class="form-control @error('idPegawai') is-invalid @enderror"
+                                                    value="{{ old('idPegawai') }}" id="idPegawai" placeholder="ID Pegawai" />
                                             </div>
+                                            @error('idPegawai')
+                                                <div class="feedback-invalid">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label" for="">Nama
                                                 Pegawai</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control text-uppercase" name="namaSekolah"
-                                                    id="namaSekolah" placeholder="Nama Sekolah" />
+                                                <input type="text" class="form-control text-uppercase @error('namaPegawai') is-invalid @enderror" name="namaPegawai"
+                                                    value="{{ old('namaPegawai') }}" id="namaPegawai" placeholder="Nama Pegawai" />
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label" for="">Tempat,
                                                 Tgl.Lahir</label>
                                             <div class="col-sm-4">
-                                                <input type="text" name="tempatLahir" id="tempatLahir"
-                                                    class="col-sm-3 form-control" placeholder="Tempat Lahir">
+                                                <input type="text" name="tempatLahir" value="{{ old('tempatLahir') }}" id="tempatLahir"
+                                                    class="col-sm-3 form-control @error('tempatLahir') is-invalid @enderror" placeholder="Tempat Lahir">
                                             </div>
                                             <div class="col-sm-4">
-                                                <input type="date" class="form-control " name="tglLahir"
-                                                    id="tglLahir" placeholder="1995/05/03" />
+                                                <input type="date" class="form-control @error('tglLahir') is-invalid @enderror" name="tglLahir"
+                                                    id="tglLahir" placeholder="1995/05/03" value="{{ old('tglLahir') }}"/>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label"
                                                 for="">No.Handphone</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('noHp') is-invalid @enderror"
                                                     onkeypress="return hanyaAngka(event)"
-                                                    name="noHp" id="noHp" placeholder="082212345633" />
+                                                    name="noHp" id="noHp" placeholder="082212345633"  value="{{ old('tglLahir') }}"/>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label" for="basic-default-jk">Jenis
                                                 Kelamin</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="jk" id="jk">
+                                                <select class="form-select @error('jk') is-invalid @enderror" name="jk" id="jk">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="Laki-Laki">Laki-Laki</option>
                                                     <option value="Perempuan">Perempuan</option>
@@ -87,7 +92,7 @@
                                             <label class="col-sm-4 col-form-label"
                                                 for="basic-default-jabatan">Jabatan</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="jabatan" id="jabatan">
+                                                <select class="form-select @error('jabatan') is-invalid @enderror" name="jabatan" id="jabatan">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="Guru">Guru</option>
                                                     <option value="Staf TU">Staf TU</option>
@@ -99,7 +104,7 @@
                                             <label class="col-sm-4 col-form-label"
                                                 for="basic-default-golongan">Golongan</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="golongan" id="golongan">
+                                                <select class="form-select @error('golongan') is-invalid @enderror" name="golongan" id="golongan">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="III A">III A</option>
                                                     <option value="III C">III C</option>
@@ -111,7 +116,7 @@
                                             <label class="col-sm-4 col-form-label" for="basic-default-status">Status
                                                 Kepegawaian</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="status" id="status">
+                                                <select class="form-select status" name="status" id="status">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="PNS">PNS</option>
                                                     <option value="Non PNS">Non PNS</option>
@@ -122,7 +127,7 @@
                                             <label class="col-sm-4 col-form-label" for="basic-default-pt">Pendidikan
                                                 Terakhir</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select" name="pT" id="pT">
+                                                <select class="form-select @error('pT') is-invalid @enderror" name="pT" id="pT">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="S2">S2</option>
                                                     <option value="S1">S1</option>
@@ -134,7 +139,7 @@
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-sm-12 text-end">
-                                                <button type="submit" id="btnSimpanPegawai" class="btn btn-primary">Simpan</button>
+                                                <button type="submit" id="" class="btn btn-primary">Simpan</button>
                                                 <button type="reset" class="btn btn-danger">Batal</button>
                                             </div>
                                         </div>
