@@ -16,8 +16,9 @@
     {{-- Bootstrap 5.2 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
@@ -53,6 +54,19 @@
     <script src="../assets/js/config.js"></script>
 
     <style>
+        .responShow{
+            display: none;
+        }
+
+        @media screen and (max-width:800px) {
+            .responHp {
+                display: none;
+            }
+            .responShow{
+                display: block;
+            }
+        }
+
         .input-group {
             position: relative;
         }
@@ -130,19 +144,20 @@
     {{-- Bootstrap 5.2 --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> --}}
 
-    {{-- Data Table Bootstrap --}}
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-
     {{-- Loading --}}
     <script src="{{ asset('assets/js/loading.js') }}"></script>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    {{-- <script src="../assets/vendor/libs/jquery/jquery.js"></script> --}}
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    {{-- Data Table Bootstrap --}}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 
     <script src="../assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
@@ -159,51 +174,12 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    {{-- Script Simpan DataPegawai Jquery --}}
-    {{-- <script>
-        $('#btnSimpanPegawai').click(function(){
-            //validasi Form
-            $('#formInputPegawai').validate({
-                submitHandler: function(form){
-                    $.ajax({
-                        type:'POST',
-                        url:"/Data/Pegawai",
-                        data: $('formInputPegawai').serialize(),
-                        success: function(){
-                            update()
-                        }
-                    });
-                    document.getElementById("idPegawai").value  =   "";
-                    document.getElementById("namaPegawai").value  =   "";
-                    document.getElementById("jk").value  =   "";
-                    document.getElementById("tempatLahir").value  =   "";
-                    document.getElementById("tglLahir").value  =   "";
-                    document.getElementById("jabatan").value  =   "";
-                    document.getElementById("golongan").value  =   "";
-                    document.getElementById("status").value  =   "";
-                    document.getElementById("pT").value  =   "";
-                    document.getElementById("noHp").value  =   "";
-                    return false;
-                }
-            });
-        });
-
-        // Buat Fungsi Refresh Data Pegawai
-        function update(){
-            $.ajax({
-                url: '/Data/Pegawai',
-                type:'get',
-                success:function(data){
-                    $('#dataPegawai').html(data);
-                }
-            });
-        }
-    </script> --}}
-
     <script>
         // Data Table
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#example').DataTable({
+                scrollX: true,
+            });
         });
 
         // Slide Form input

@@ -38,13 +38,18 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label class="col-sm-4 col-form-label" for="basic-default-name">Nama
+                                                <label class="col-sm-4 col-form-label" for="basic-default-pt">Nama
                                                     Bank</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control text-uppercase"
-                                                        name="namaBank" id="basic-default-name"
-                                                        placeholder="Nama Bank..."
-                                                        value="{{ $item->namaBank }}" />
+                                                    <select class="form-select @error('namaBank') is-invalid @enderror" name="namaBank" id="namaBank">
+                                                        <option disabled selected hidden>Pilih...</option>
+                                                        <option value="BCA">BCA</option>
+                                                        <option value="BNI">BNI</option>
+                                                        <option value="BRI">BRI</option>
+                                                        <option value="BSI">BSI</option>
+                                                        <option value="MANDIRI">MANDIRI</option>
+                                                        <option value="MUMALAT">MUAMALAT</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
