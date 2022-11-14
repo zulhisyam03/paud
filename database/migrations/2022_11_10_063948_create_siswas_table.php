@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('idSiswa')->nullable();
             $table->string('namaSiswa')->nullable();
             $table->string('jk')->nullable();
-            $table->string('tempaLahir')->nullable();
+            $table->string('tempatLahir')->nullable();
             $table->date('tglLahir')->nullable();
             $table->text('alamat')->nullable();
             $table->string('agama')->nullable();

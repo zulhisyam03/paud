@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
 use App\Models\User;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -25,7 +26,9 @@ class PegawaiController extends Controller
         return view('dashboard.pegawai',[
             'title'         =>  'Data PTK',
             'npsnSekolah'      =>   $npsn,
-            'pegawai' =>  $pegawai
+            'pegawai' =>  $pegawai,
+            'jmlPtk'    => Pegawai::count(),
+            'jmlPd'     => Siswa::count()
         ]);
     }
 

@@ -6,6 +6,8 @@ use App\Models\Dashboard;
 use App\Models\DataPelengkap;
 use App\Models\Kontak;
 use App\Models\Sekolah;
+use App\Models\Pegawai;
+use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -31,7 +33,9 @@ class DashboardController extends Controller
             'title'     =>  'Dashboard',
             'profil'    =>  $user,
             'kontak'    =>  $kontak,
-            'pelengkap' =>  $pelengkap
+            'pelengkap' =>  $pelengkap,
+            'jmlPtk'    =>  Pegawai::count(),
+            'jmlPd'     =>  Siswa::count()
         ]);
     }
 

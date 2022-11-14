@@ -28,9 +28,20 @@
                 <td class="responHp">{{ $item['noHp'] }}</td>
                 <td class="responHp">{{ $item['status'] }}</td>
                 <td>
-                    <a href=""><i class='bx bx-show' alt="Lihat"></i></a>
+                    <div class="d-block" style="width:70px;text-align:center;">
+                        <a href="#showPegawai{{ $item->idPegawai }}" data-bs-toggle="modal"
+                            data-bs-target="#showPegawai{{ $item->idPegawai }}"><i class='bx bx-show'
+                                alt="Lihat"></i></a> 
+                                @include('component.modal.modalPegawai')
+                        <a href="#showEditPegawai{{ $item->idPegawai }}" data-bs-toggle="modal"
+                            data-bs-target="#showEditPegawai{{ $item->idPegawai }}"><i class='bx bx-pencil text-success'
+                                alt="Edit"></i></a>
+                                <i class='bx bx-trash d-inline text-danger'
+                                alt="Edit"></i>
+                                @include('component.modal.modalEditPegawai')
+                    </div>
                 </td>
-            </tr>
+            </tr>                        
         @endforeach
     </tbody>
 </table>

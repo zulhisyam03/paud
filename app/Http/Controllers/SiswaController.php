@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Siswa;
+use App\Models\Pegawai;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -15,6 +17,20 @@ class SiswaController extends Controller
     public function index()
     {
         //
+        $email  =   auth()->user()->email;
+        $user   =   User::where('email',$email)->get();
+        foreach ($user as $key) {
+            # code...
+            $siswa =   Siswa::where('npsnSekolah', $key->sekolahProfil['npsn'])->get();
+            $npsn   =    $key->sekolahProfil['npsn'];
+        }
+        return view('dashboard.siswa',[
+            'title'         =>  'Data Siswa',
+            'npsnSekolah'   =>   $npsn,
+            'siswa'       =>  $siswa,
+            'jmlPtk'    =>  Pegawai::count(),
+            'jmlPd'     =>  Siswa::count()
+        ]);
     }
 
     /**

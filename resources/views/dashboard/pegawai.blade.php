@@ -27,14 +27,9 @@
                                     {{-- FORM INPUT DATA PEGAWAI --}}
                                     <form action="/Data/Pegawai" method="POST" id="" class="formInput">
                                         @csrf
-                                        <div class="row mb-3">
-                                            <label class="col-sm-4 col-form-label" for="">NPSN</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" name="npsnSekolah" class="form-control @error('npsnSekolah') is-invalid @enderror"
+                                        <input type="hidden" name="npsnSekolah"  class="form-control @error('npsnSekolah') is-invalid @enderror"
                                                     id="npsn" placeholder="NPSN"
                                                     value="{{ $npsnSekolah }}" />
-                                            </div>
-                                        </div>
                                         <div class="row mb-3">
                                             <label class="col-sm-4 col-form-label" for="">ID
                                                 Pegawai</label>
@@ -116,7 +111,7 @@
                                             <label class="col-sm-4 col-form-label" for="basic-default-status">Status
                                                 Kepegawaian</label>
                                             <div class="col-sm-8">
-                                                <select class="form-select status" name="status" id="status">
+                                                <select class="form-select @error('status') is-invalid @enderror" name="status" id="status">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="PNS">PNS</option>
                                                     <option value="Non PNS">Non PNS</option>

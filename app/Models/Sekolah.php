@@ -38,4 +38,12 @@ class Sekolah extends Model
     public function pegawai(){
         return $this->hasMany(Pegawai::class,'npsnSekolah','npsn');
     }
+
+    public function siswa(){
+        return $this->hasMany(Siswa::class,'npsnSekolah','npsn');
+    }
+
+    public function prasarana(){
+        return $this->hasMany(Prasarana::class,'npsnSekolah','npsn');
+    }
 }

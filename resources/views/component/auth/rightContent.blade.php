@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <span>PD</span>
-                <h3 class="card-title mb-1">25 <small><sub>Org</sub></small></h3>
+                <h3 class="card-title mb-1">{{ $jmlPd }} <small><sub>Org</sub></small></h3>
                 <a href="#">
                     <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
                         Detil</small>
@@ -108,8 +108,8 @@
                     </div>
                 </div>
                 <span>PTK</span>
-                <h3 class="card-title mb-1">40 <small><sub>Org</sub></small></h3>
-                <a href="#">
+                <h3 class="card-title mb-1">{{ $jmlPtk }} <small><sub>Org</sub></small></h3>
+                <a href="/Data/dataptk">
                     <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i>
                         Detil</small>
                 </a>

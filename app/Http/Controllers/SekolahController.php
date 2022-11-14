@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Kontak;
-use App\Models\Sekolah;
+use App\Models\Pegawai;
+use App\Models\Sekolah;  
+use App\Models\Siswa;  
 use Illuminate\Http\Request;
 use App\Models\DataPelengkap;
 use App\Http\Controllers\Controller;
@@ -64,7 +66,9 @@ class SekolahController extends Controller
         $email  =   auth()->user()->email;
         return view('dashboard.profileSekolah',[
             'title'     =>  'Profile Sekolah',
-            'profil'     =>  User::where('email',$email)->get()
+            'profil'     =>  User::where('email',$email)->get(),
+            'jmlPtk'    =>  Pegawai::count(),
+            'jmlPd '    =>  Siswa::count()
         ]);
     }
     public function editKontak(Sekolah $sekolah)
@@ -77,7 +81,9 @@ class SekolahController extends Controller
         }
         return view('dashboard.kontakSekolah',[
             'title'     =>  'Kontak Sekolah',
-            'kontak'     =>  $kontak
+            'kontak'     =>  $kontak,
+            'jmlPtk'    =>  Pegawai::count(),
+            'jmlPd'     =>  Siswa::count()
         ]);
     }
 
@@ -90,7 +96,9 @@ class SekolahController extends Controller
         }
         return view('dashboard.dataPelengkap',[
             'title'         =>  'Data Pelengkap',
-            'dataPelengkap' =>  $dataPelengkap
+            'dataPelengkap' =>  $dataPelengkap,
+            'jmlPtk'    =>  Pegawai::count(),
+            'jmlPd'     =>  Siswa::count()
         ]);
     }
 
