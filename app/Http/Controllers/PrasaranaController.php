@@ -19,16 +19,16 @@ class PrasaranaController extends Controller
         $tglSekarang    =   date('Y');
         foreach ($user as $key) {
             # code...
-            $prasarana =   Prasarana::where('npsnSekolah', $key->sekolahProfil['npsn'])->get();
+            $prasarana =   Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->OrderBy('semester','ASC')->get();
             $npsn      =    $key->sekolahProfil['npsn'];
         }
-        return view('dashboard.pegawai', [
-            'title'         =>  'Data PTK',
-            'npsnSekolah'      =>   $npsn,
+        return view('dashboard.prasarana', [
+            'title'         =>  'Data Prasarana',
+            'npsnSekolah'   =>   $npsn,
             'prasarana'     =>  $prasarana,
             'jmlPtk'        => Pegawai::count(),
             'jmlPd'         => Siswa::count(),
-            'jmlPrasarana'  => Prasarana::where('semester','LIKE','%'.$tglSekarang,'%')->count()
+            'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count()
         ]);
     }
 }

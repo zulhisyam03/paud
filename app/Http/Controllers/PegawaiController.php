@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pegawai;
 use App\Models\User;
 use App\Models\Siswa;
+use App\Models\Prasarana;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -18,6 +19,7 @@ class PegawaiController extends Controller
     {
         $email  =   auth()->user()->email;
         $user   =   User::where('email',$email)->get();
+        $tglSekarang    =   date('Y');
         foreach ($user as $key) {
             # code...
             $pegawai =   Pegawai::where('npsnSekolah', $key->sekolahProfil['npsn'])->get();
@@ -28,7 +30,8 @@ class PegawaiController extends Controller
             'npsnSekolah'      =>   $npsn,
             'pegawai' =>  $pegawai,
             'jmlPtk'    => Pegawai::count(),
-            'jmlPd'     => Siswa::count()
+            'jmlPd'     => Siswa::count(),
+            'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count()
         ]);
     }
 

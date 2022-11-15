@@ -90,6 +90,7 @@
                                                 <select class="form-select @error('jabatan') is-invalid @enderror" name="jabatan" id="jabatan">
                                                     <option disabled selected hidden>Pilih...</option>
                                                     <option value="Guru">Guru</option>
+                                                    <option value="Operator">Operator</option>
                                                     <option value="Staf TU">Staf TU</option>
                                                     <option value="Kepala Sekolah">Kepala Sekolah</option>
                                                 </select>

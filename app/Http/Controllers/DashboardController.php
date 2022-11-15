@@ -9,6 +9,7 @@ use App\Models\Sekolah;
 use App\Models\Pegawai;
 use App\Models\Siswa;
 use App\Models\User;
+use App\Models\Prasarana;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -23,6 +24,7 @@ class DashboardController extends Controller
         //
         $email  =   auth()->user()->email;
         $user   =   User::where('email',$email)->get();
+        $tglSekarang    =   date('Y');
         foreach ($user as $key) {
             # code...
             $kontak     =   Kontak::where('npsn', $key->sekolahProfil['npsn'])->get();
@@ -30,12 +32,13 @@ class DashboardController extends Controller
         }        
 
         return view('dashboard.index',[
-            'title'     =>  'Dashboard',
-            'profil'    =>  $user,
-            'kontak'    =>  $kontak,
-            'pelengkap' =>  $pelengkap,
-            'jmlPtk'    =>  Pegawai::count(),
-            'jmlPd'     =>  Siswa::count()
+                'title'     =>  'Dashboard',
+                'profil'    =>  $user,
+                'kontak'    =>  $kontak,
+                'pelengkap' =>  $pelengkap,
+                'jmlPtk'    =>  Pegawai::count(),
+                'jmlPd'     =>  Siswa::count(),
+                'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count()
         ]);
     }
 

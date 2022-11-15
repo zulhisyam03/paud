@@ -7,6 +7,7 @@ use App\Models\Kontak;
 use App\Models\Pegawai;
 use App\Models\Sekolah;  
 use App\Models\Siswa;  
+use App\Models\Prasarana;  
 use Illuminate\Http\Request;
 use App\Models\DataPelengkap;
 use App\Http\Controllers\Controller;
@@ -64,17 +65,26 @@ class SekolahController extends Controller
     public function editProfile(Sekolah $sekolah)
     {
         $email  =   auth()->user()->email;
+        $user   =   User::where('email',$email)->get();
+        $tglSekarang    =   date('y');
+
+        foreach ($user as $key) {
+            # code...
+            $profil =   Sekolah::where('npsn', $key->sekolahProfil['npsn'])->get();
+        }
         return view('dashboard.profileSekolah',[
             'title'     =>  'Profile Sekolah',
-            'profil'     =>  User::where('email',$email)->get(),
-            'jmlPtk'    =>  Pegawai::count(),
-            'jmlPd '    =>  Siswa::count()
+            'profil'     =>  $user,
+            'jmlPtk'    =>  Pegawai::where('npsnSekolah',$key->sekolahProfil['npsn'])->count(),
+            'jmlPd'    =>  Siswa::where('npsnSekolah',$key->sekolahProfil['npsn'])->count(),
+            'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count()
         ]);
     }
     public function editKontak(Sekolah $sekolah)
     {
         $email  =   auth()->user()->email;
         $user   =   User::where('email',$email)->get();
+        $tglSekarang    =   date('y');
         foreach ($user as $key) {
             # code...
             $kontak =   Kontak::where('npsn', $key->sekolahProfil['npsn'])->get();
@@ -83,13 +93,15 @@ class SekolahController extends Controller
             'title'     =>  'Kontak Sekolah',
             'kontak'     =>  $kontak,
             'jmlPtk'    =>  Pegawai::count(),
-            'jmlPd'     =>  Siswa::count()
+            'jmlPd'     =>  Siswa::count(),
+            'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count()
         ]);
     }
 
     public function editPelengkap(){
         $email  =   auth()->user()->email;
         $user   =   User::where('email',$email)->get();
+        $tglSekarang    =   date('y');
         foreach ($user as $key) {
             # code...
             $dataPelengkap =   DataPelengkap::where('npsnSekolah', $key->sekolahProfil['npsn'])->get();
@@ -98,7 +110,8 @@ class SekolahController extends Controller
             'title'         =>  'Data Pelengkap',
             'dataPelengkap' =>  $dataPelengkap,
             'jmlPtk'    =>  Pegawai::count(),
-            'jmlPd'     =>  Siswa::count()
+            'jmlPd'     =>  Siswa::count(),
+            'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count()
         ]);
     }
 

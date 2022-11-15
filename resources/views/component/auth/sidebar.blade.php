@@ -85,7 +85,7 @@
                 </li>                
             </ul>
         </li>
-        <li class="menu-item {{ $title === 'Data PTK' ? 'active' : '' }} {{ $title === 'Data Siswa' ? 'active' : '' }} {{ $title === 'Data Sarpras' ? 'active' : '' }}">
+        <li class="menu-item {{ $title === 'Data PTK' ? 'active' : '' }} {{ $title === 'Data Siswa' ? 'active' : '' }} {{ $title === 'Data Sarpras' ? 'active' : '' }} {{ $title === 'Data Sanitasi' ? 'active' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle show" >
                 <i class="menu-icon tf-icons bx bx-data"></i>
                 <div data-i18n="Authentications">Rekapitulasi</div>
@@ -106,8 +106,8 @@
                         <div data-i18n="Basic">Data Sarpras</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="auth-forgot-password-basic.html" class="menu-link" target="">
+                <li class="menu-item {{ $title === 'Data Sanitasi' ? 'active' : '' }}">
+                    <a href="/Data/sanitasi" class="menu-link" target="">
                         <div data-i18n="Basic">Data Sanitasi</div>
                     </a>
                 </li>
