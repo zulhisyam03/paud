@@ -28,7 +28,9 @@ class PrasaranaController extends Controller
             'prasarana'     =>  $prasarana,
             'jmlPtk'        => Pegawai::count(),
             'jmlPd'         => Siswa::count(),
-            'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count()
+            'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count(),
+            'jmlPrasaranaGanjil'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.' Ganjil%']])->count(),
+            'jmlPrasaranaGenap'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.' Genap%']])->count(),
         ]);
     }
 }
