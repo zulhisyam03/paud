@@ -136,7 +136,7 @@
                     @endforeach
                 <td></td>
             </tr>
-            <tr>
+            <tr class="text-center">
                 <th colspan="2">TOTAL</th>
                 <th>{{ $jmlPrasaranaGanjil }}</th>
                 <th>{{ $jmlPrasaranaGenap }}</th>
