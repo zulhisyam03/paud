@@ -2,139 +2,88 @@
         <thead>
             <tr>
                 <th valign="middle">#</th>
-                <th valign="middle" class="">Jenis Sarpras</th>
-                @foreach ($prasarana as $item)
+                <th valign="middle" class="">Sanitasi Sekolah</th>
                 <th class="responHp text-center">
-                    Jml {{ $item->semester }}
-                    <br>
-                    <form action="/Data/prasarana/{{ $item->semester }}">
-                        @csrf
-                        <input type="hidden" name="semester">
-                        <button class="" style="background:none;border:0;"><i class="bx bx-trash text-danger"></i></button>
-                        <a href="/Data/prasarana/edit/{{ $item->semester }}">
-                            <i class="bx bx-pencil text-success"></i>
-                        </a>
-                    </form>                    
+                    Uraian
                 </th>                                   
-                @endforeach
             </tr>
             <tr>
                 <td>1</td>
-                <td class="">Ruang Kelas</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->kelas }}</td>                                   
+                <td class="">Sumber Air</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->sumberAir }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>2</td>
-                <td class="">Ruang Perpustakaan</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->perpustakaan }}</td>                                   
+                <td class="">Sumber Air Minum</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->sumberAirMinum }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>3</td>
-                <td class="">Ruang Laboratorium</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->laboratorium }}</td>                                   
+                <td class="">Kecukupan Air Bersih</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->airBersih }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>4</td>
-                <td class="">Ruang Praktik</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->praktik }}</td>                                   
+                <td class="">Sekolah Menyediakan Jamban Yang Dilengkapi dengan Fasilitas Pendukung untuk digunakan oleh siswa berkebutuhan khusus</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->jambanDifable }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>5</td>
-                <td class="">Ruang Pimpinan</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->pimpinan }}</td>                                   
+                <td class="">Tipe Jamban</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->tipeJamban }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>6</td>
-                <td class="">Ruang Guru</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->guru }}</td>                                   
+                <td class="">Jumlah hari dalam seminggu siswa mengikuti kegiatan cuci tangan berkelompok</th></th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->jmlHariCuciTangan }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>7</td>
-                <td class="">Ruang Ibadah</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->ibadah }}</td>                                   
+                <td class="">Jumlah tempat cuci tangan</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->jmlTempatCuciTangan }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>8</td>
-                <td class="">Ruang UKS</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->uks }}</td>                                   
+                <td class="">Jumlah tempat cuci tangan rusak</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->jmlTempatCuciTanganRusak }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>9</td>
-                <td class="">Toilet</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->toilet }}</td>                                   
+                <td class="">Apakah Sabun dan air mengalir pada tempat cuci tangan</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->airMengalirTempatCuciTangan }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>10</td>
-                <td class="">Ruang Gudang</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->gudang }}</td>                                   
+                <td class="">Sekolah memiliki saluran pembuangan air limbah dari jamban</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->saluranLimbaJamban }}</td>                                   
                     @endforeach                
             </tr>
             <tr>
                 <td>11</td>
-                <td class="">Ruang Sirkulasi</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->sirkulasi }}</td>                                   
+                <td class="">Sekolah Pernah Menguras Tangki Septik dalam 3 hingga 5 tahun terakhir dengan truk/motor sedot tinja</th>
+                    @foreach ($sanitasi as $item)
+                    <td class="responHp text-center">{{ $item->mengurasSeptik }}</td>                                   
                     @endforeach                
-            </tr>
-            <tr>
-                <td>12</td>
-                <td class="">Tempat Bermain / Olahraga</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->tempatBermain }}</td>                                   
-                    @endforeach                
-            </tr>
-            <tr>
-                <td>13</td>
-                <td class="">Ruang TU</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->tu }}</td>                                   
-                    @endforeach                
-            </tr>
-            <tr>
-                <td>14</td>
-                <td class="">Ruang Konseling</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->konseling }}</td>                                   
-                    @endforeach                
-            </tr>
-            <tr>
-                <td>15</td>
-                <td class="">Ruang OSIS</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->osis }}</td>                                   
-                    @endforeach                
-            </tr>
-            <tr>
-                <td>16</td>
-                <td class="">Ruang Bangunan</th>
-                    @foreach ($prasarana as $item)
-                    <td class="responHp text-center">{{ $item->bangunan }}</td>                                   
-                    @endforeach                
-            </tr>
-            <tr class="text-center">
-                <th colspan="2">TOTAL</th>
-                <th>{{ $jmlPrasaranaGanjil }}</th>
-                <th>{{ $jmlPrasaranaGenap }}</th>
-            </tr>
+            </tr>        
         </thead>
         <tbody>
 

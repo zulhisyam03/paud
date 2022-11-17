@@ -35,8 +35,8 @@
                                                 <th>Semester</th>
                                                 <td>
                                                     <div class="row">
-                                                        <div class="col-sm-4 ps-0">
-                                                            <select name="thSemester" class="form-select">
+                                                        <div class="col-sm ps-0">
+                                                            <select name="semester" class="form-select">
                                                                 <option hidden selected>Tahun...</option>
                                                                 @php
                                                                     $tglNow = date('Y');
@@ -50,43 +50,29 @@
                                                                     @endphp
                                                                 @endfor
                                                             </select>
-                                                        </div>
-                                                        <div class="col-sm-5">
-                                                            <select name="semester" id="" class="form-select">
-                                                                <option hidden selected>Semeste...</option>
-                                                                <option value="Ganjil">Ganjil</option>
-                                                                <option value="Genap">Genap</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                        </div>                                                        
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Kelas</th>
+                                                <th>Sumber Air</th>
                                                 <td>
-                                                    <div class="number-spinner row">
-                                                        <button class="btn btn-danger btn-sm" data-dir="dwn" type="button"
-                                                            style="width: 60px">
-                                                            <i class="bx bx-minus d-inline"></i>
-                                                        </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
-                                                            <input type="text" class="form-control text-center"
-                                                                value="0" name="kelas">
-                                                        </div>
-                                                        <button class="btn btn-warning btn-sm" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                    <div class="row">
+                                                       <div class="col-sm-5">
+                                                        <input type="radio" class="form-control" value="Ada">Ada                                                        
+                                                        <input type="radio" class="form-control" value="Tidak Ada">Tidak Ada                                                        
+                                                       </div>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Perpustakaan</th>
+                                                <th>Sumber Air Minum</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="perpustakaan">
                                                         </div>
@@ -96,14 +82,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Laboratorium</th>
+                                                <th>Kecukupan Air Bersih</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="laboratorium">
                                                         </div>
@@ -113,14 +99,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Praktik</th>
+                                                <th>Sekolah Menyediakan Jamban Yang Dilengkapi dengan Fasilitas Pendukung untuk digunakan oleh siswa berkebutuhan khusus</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="praktik">
                                                         </div>
@@ -130,14 +116,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Pimpinan</th>
+                                                <th>Tipe Jamban</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="pimpinan">
                                                         </div>
@@ -147,14 +133,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Guru</th>
+                                                <th>Jumlah hari dalam seminggu siswa mengikuti kegiatan cuci tangan berkelompok</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="guru">
                                                         </div>
@@ -164,14 +150,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Ibadah</th>
+                                                <th>Jumlah tempat cuci tangan</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="ibadah">
                                                         </div>
@@ -181,14 +167,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang UKS</th>
+                                                <th>Jumlah tempat cuci tangan rusak</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="uks">
                                                         </div>
@@ -198,14 +184,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Toilet</th>
+                                                <th>Apakah Sabun dan air mengalir pada tempat cuci tangan</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="toilet">
                                                         </div>
@@ -215,14 +201,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Gudang</th>
+                                                <th>Sekolah memiliki saluran pembuangan air limbah dari jamban</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="gudang">
                                                         </div>
@@ -232,14 +218,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ruang Sirkulasi</th>
+                                                <th>Sekolah Pernah Menguras Tangki Septik dalam 3 hingga 5 tahun terakhir dengan truk/motor sedot tinja</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
                                                             style="width: 60px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
+                                                        <div class="col-sm-5 d-inline px-0.5">
                                                             <input type="text" class="form-control text-center"
                                                                 value="0" name="sirkulasi">
                                                         </div>
@@ -247,92 +233,7 @@
                                                             style="width: 60px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Tempat Bermain/Olahraga</th>
-                                                <td>
-                                                    <div class="number-spinner row">
-                                                        <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
-                                                            <i class="bx bx-minus d-inline"></i>
-                                                        </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
-                                                            <input type="text" class="form-control text-center"
-                                                                value="0" name="tempatBermain">
-                                                        </div>
-                                                        <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Ruang Tata Usaha</th>
-                                                <td>
-                                                    <div class="number-spinner row">
-                                                        <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
-                                                            <i class="bx bx-minus d-inline"></i>
-                                                        </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
-                                                            <input type="text" class="form-control text-center"
-                                                                value="0" name="tu">
-                                                        </div>
-                                                        <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Ruang Konseling</th>
-                                                <td>
-                                                    <div class="number-spinner row">
-                                                        <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
-                                                            <i class="bx bx-minus d-inline"></i>
-                                                        </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
-                                                            <input type="text" class="form-control text-center"
-                                                                value="0" name="konseling">
-                                                        </div>
-                                                        <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Ruang OSIS</th>
-                                                <td>
-                                                    <div class="number-spinner row">
-                                                        <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
-                                                            <i class="bx bx-minus d-inline"></i>
-                                                        </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
-                                                            <input type="text" class="form-control text-center"
-                                                                value="0" name="osis">
-                                                        </div>
-                                                        <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Ruang Bangunan</th>
-                                                <td>
-                                                    <div class="number-spinner row">
-                                                        <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
-                                                            <i class="bx bx-minus d-inline"></i>
-                                                        </button>
-                                                        <div class="col-sm-3 d-inline px-0.5">
-                                                            <input type="text" class="form-control text-center"
-                                                                value="0" name="bangunan">
-                                                        </div>
-                                                        <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            </tr>                                        
                                             <tr class="border border-white">
                                                 <td colspan="2" class="text-end"><button type="submit"
                                                         id="" class="btn btn-primary">Simpan</button>
@@ -345,7 +246,7 @@
                                     <br>
                                     <hr>
                                     {{-- Table Data Pegawai --}}
-                                    @include('dashboard.dataPrasarana')
+                                    @include('dashboard.dataSanitasi')
                                 </div>
                             </div>
                         </div>

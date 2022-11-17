@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('sanitasis', function (Blueprint $table) {
             $table->id();
             $table->integer('npsnSekolah');
+            $table->integer('semester')->nullable();
             $table->string('sumberAir')->nullable();
             $table->string('sumberAirMinum')->nullable();
             $table->string('airBersih')->nullable();
