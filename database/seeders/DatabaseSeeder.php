@@ -10,6 +10,7 @@ use App\Models\Sekolah;
 use App\Models\User;
 use App\Models\Pegawai;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,17 +31,18 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name'      =>  'TK Sekolah 1',
             'email'     =>  'example1@gmail.com',
-            'password'  =>  bcrypt('123456')
+            // 'password'  =>  bcrypt('123456')
+            'password'  =>  Hash::make('123456')
         ]);
         User::factory()->create([
             'name'      =>  'TK Sekolah 2',
             'email'     =>  'example2@gmail.com',
-            'password'  =>  bcrypt('123456')
+            'password'  =>  Hash::make('123456')
         ]);
         User::factory()->create([
             'name'      =>  'TK Sekolah 3',
             'email'     =>  'example3@gmail.com',
-            'password'  =>  bcrypt('123456')
+            'password'  =>  Hash::make('123456')
         ]);
 
         Sekolah::create([
