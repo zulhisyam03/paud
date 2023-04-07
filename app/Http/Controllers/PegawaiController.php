@@ -70,7 +70,7 @@ class PegawaiController extends Controller
 
         Pegawai::create($validasi);
 
-        return redirect('/profile/dataPtk')->with('succes','Data Pegawai Berhasil Di Tambahkan !!!');
+        return redirect('/Data/dataPtk')->with('succes','Data Pegawai Berhasil Di Tambahkan !!!');
     }
 
     /**

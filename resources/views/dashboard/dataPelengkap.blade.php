@@ -17,6 +17,12 @@
                     {{-- Mid Content --}}
                     <span class="text-muted mb-1">Profile <i class='bx bx-chevrons-right'></i>
                         <b>{{ $title }}</b></span>
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Sukses!</strong> {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
 
                     <div class="col-lg-8 mb-4">
                         <div class="row">
@@ -27,13 +33,17 @@
                                         <form action="/profile/sekolah" method="POST">
                                             @csrf
                                             <div class="row mb-3">
-                                                <label class="col-sm-4 col-form-label"
-                                                    for="basic-default-name">Kebutuhan Khusus Dilayani</label>
+                                                <label class="col-sm-4 col-form-label" for="basic-default-name">Kebutuhan
+                                                    Khusus Dilayani</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-select" name="kkd" id="">
-                                                        <option disabled selected hidden>{{ $item->kkd != '' ? $item->kkd : 'Pilih...' }}</option>
-                                                        <option value="Ada">Ada</option>
-                                                        <option value="Tidak Ada">Tidak Ada</option>
+                                                        <option disabled selected>
+                                                            Pilih ... </option>
+                                                        <option value="Ada" {{ $item->kkd == 'Ada' ? 'selected' : '' }}>
+                                                            Ada</option>
+                                                        <option value="Tidak Ada"
+                                                            {{ $item->kkd == 'Tidak Ada' ? 'selected' : '' }}>Tidak Ada
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -41,33 +51,44 @@
                                                 <label class="col-sm-4 col-form-label" for="basic-default-pt">Nama
                                                     Bank</label>
                                                 <div class="col-sm-8">
-                                                    <select class="form-select @error('namaBank') is-invalid @enderror" name="namaBank" id="namaBank">
-                                                        <option disabled selected hidden>Pilih...</option>
-                                                        <option value="BCA">BCA</option>
-                                                        <option value="BNI">BNI</option>
-                                                        <option value="BRI">BRI</option>
-                                                        <option value="BSI">BSI</option>
-                                                        <option value="MANDIRI">MANDIRI</option>
-                                                        <option value="MUMALAT">MUAMALAT</option>
+                                                    <select class="form-select @error('namaBank') is-invalid @enderror"
+                                                        name="namaBank" id="namaBank">
+                                                        <option disabled selected disabled>Pilih...</option>
+                                                        <option value="BCA"
+                                                            {{ $item->namaBank == 'BCA' ? 'selected' : '' }}>BCA</option>
+                                                        <option value="BNI"
+                                                            {{ $item->namaBank == 'BNI' ? 'selected' : '' }}>BNI</option>
+                                                        <option value="BRI"
+                                                            {{ $item->namaBank == 'BRI' ? 'selected' : '' }}>BRI</option>
+                                                        <option value="BSI"
+                                                            {{ $item->namaBank == 'BSI' ? 'selected' : '' }}>BSI</option>
+                                                        <option value="MANDIRI"
+                                                            {{ $item->namaBank == 'MANDIRI' ? 'selected' : '' }}>MANDIRI
+                                                        </option>
+                                                        <option value="MUMALAT"
+                                                            {{ $item->namaBank == 'MUAMALAT' ? 'selected' : '' }}>MUAMALAT
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <label class="col-sm-4 col-form-label" for="basic-default-name">Cabang KCP/Unit
+                                                <label class="col-sm-4 col-form-label" for="basic-default-name">Cabang
+                                                    KCP/Unit
                                                     Bank</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control text-uppercase"
                                                         name="cabangBank" id="basic-default-name"
-                                                        placeholder="Cabang Bank..."
-                                                        value="{{ $item->cabangBank }}" />
+                                                        placeholder="Cabang Bank..." value="{{ $item->cabangBank }}" />
                                                 </div>
-                                            </div>                                            
+                                            </div>
                                             <div class="row mb-3">
-                                                <label class="col-sm-4 col-form-label" for="basic-default-name">Rekening Atas Nama</label>
+                                                <label class="col-sm-4 col-form-label" for="basic-default-name">Rekening
+                                                    Atas Nama</label>
                                                 <div class="col-sm-2">
                                                     <input type="text" class="form-control" name="noRek"
                                                         id="basic-default-noRek" placeholder="No Rek..."
-                                                        value="{{ $item->noRek }}" onkeypress="return hanyaAngka(event)"/>
+                                                        value="{{ $item->noRek }}"
+                                                        onkeypress="return hanyaAngka(event)" />
                                                 </div>
                                                 <div class="col-sm">
                                                     <input type="text" class="form-control" name="nama"

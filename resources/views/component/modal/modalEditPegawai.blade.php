@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <form action="Pegawai/{{ $item->idPegawai }}" method="post">
+                <form action="Data/Pegawai/{{ $item->idPegawai }}" method="post">
                     @method('delete')
                     @csrf
                     <button type="submit" class="btn btn-primary"><i class='bx bx-paper-plane'></i> Simpan</button>

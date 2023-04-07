@@ -106,6 +106,7 @@ class SekolahController extends Controller
             # code...
             $dataPelengkap =   DataPelengkap::where('npsnSekolah', $key->sekolahProfil['npsn'])->get();
         }
+
         return view('dashboard.dataPelengkap',[
             'title'         =>  'Data Pelengkap',
             'dataPelengkap' =>  $dataPelengkap,
@@ -113,6 +114,29 @@ class SekolahController extends Controller
             'jmlPd'     =>  Siswa::count(),
             'jmlPrasarana'  => Prasarana::where([['npsnSekolah', $key->sekolahProfil['npsn']],['semester','LIKE','%'.$tglSekarang.'%']])->count()
         ]);
+    }
+
+    public function saveDataPelengkap(Request $request){
+        $validasi = $request->validate([
+            'kkd' => 'required',
+            'namaBank' => 'required',
+            'cabangBank' => 'required',
+            'noRek' => 'required',
+            'nama' => 'required'
+        ]);
+        $email = auth()->user()->email;
+        $user = User::where('email',$email)->get();
+        foreach($user as $key){        
+            $editPelengkap = DataPelengkap::where('npsnSekolah',$key->sekolahProfil['npsn'])->update([
+                'kkd' => $validasi['kkd'],
+                'namaBank' => $validasi['namaBank'],
+                'cabangBank' => $validasi['cabangBank'],
+                'noRek' => $validasi['noRek'],
+                'nama' => $validasi['nama']
+            ]);
+        }
+
+        return redirect()->back()->with('success','Data pelengkap berhasil!');
     }
 
     /**
