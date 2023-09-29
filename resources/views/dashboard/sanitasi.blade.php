@@ -1,6 +1,16 @@
 @extends('layouts.main')
 {{-- Loading --}}
+<style type="text/css">
+    .number-spinner>.btn {
+        width: 40px;
+        height: 30px !important;
+        padding-left: 10px !important;
+    }
 
+    input[type=text] {
+        padding-left: 12px !important;
+    }
+</style>
 @section('content')
     @include('component.auth.sidebar')
     <!-- Layout container -->
@@ -50,17 +60,20 @@
                                                                     @endphp
                                                                 @endfor
                                                             </select>
-                                                        </div>                                                        
+                                                        </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>Sumber Air</th>
                                                 <td>
                                                     <div class="row">
-                                                       <div class="col-sm-5">
-                                                        <input type="radio" class="form-control" value="Ada">Ada                                                        
-                                                        <input type="radio" class="form-control" value="Tidak Ada">Tidak Ada                                                        
-                                                       </div>
+                                                        <div class="col-sm">
+                                                            <input type="radio" class="form-check-input" name="sumber_air"
+                                                                value="Ada">Ada
+                                                            <br/>
+                                                                <input type="radio" class="form-check-input"
+                                                                    name="sumber_air" value="Tidak Ada">Tidak Ada
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -69,7 +82,7 @@
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -77,7 +90,7 @@
                                                                 value="0" name="perpustakaan">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -86,7 +99,7 @@
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -94,16 +107,17 @@
                                                                 value="0" name="laboratorium">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Sekolah Menyediakan Jamban Yang Dilengkapi dengan Fasilitas Pendukung untuk digunakan oleh siswa berkebutuhan khusus</th>
+                                                <th>Sekolah Menyediakan Jamban Yang Dilengkapi dengan Fasilitas Pendukung
+                                                    untuk digunakan oleh siswa berkebutuhan khusus</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -111,7 +125,7 @@
                                                                 value="0" name="praktik">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -120,7 +134,7 @@
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -128,16 +142,17 @@
                                                                 value="0" name="pimpinan">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Jumlah hari dalam seminggu siswa mengikuti kegiatan cuci tangan berkelompok</th>
+                                                <th>Jumlah hari dalam seminggu siswa mengikuti kegiatan cuci tangan
+                                                    berkelompok</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -145,7 +160,7 @@
                                                                 value="0" name="guru">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -154,7 +169,7 @@
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -162,7 +177,7 @@
                                                                 value="0" name="ibadah">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -171,7 +186,7 @@
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -179,7 +194,7 @@
                                                                 value="0" name="uks">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -188,7 +203,7 @@
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -196,7 +211,7 @@
                                                                 value="0" name="toilet">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -205,7 +220,7 @@
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -213,16 +228,17 @@
                                                                 value="0" name="gudang">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Sekolah Pernah Menguras Tangki Septik dalam 3 hingga 5 tahun terakhir dengan truk/motor sedot tinja</th>
+                                                <th>Sekolah Pernah Menguras Tangki Septik dalam 3 hingga 5 tahun terakhir
+                                                    dengan truk/motor sedot tinja</th>
                                                 <td>
                                                     <div class="number-spinner row">
                                                         <button class="btn btn-danger" data-dir="dwn" type="button"
-                                                            style="width: 60px">
+                                                            style="width: 40px">
                                                             <i class="bx bx-minus d-inline"></i>
                                                         </button>
                                                         <div class="col-sm-5 d-inline px-0.5">
@@ -230,10 +246,10 @@
                                                                 value="0" name="sirkulasi">
                                                         </div>
                                                         <button class="btn btn-warning" data-dir="up" type="button"
-                                                            style="width: 60px"><i class="bx bx-plus"></i></button>
+                                                            style="width: 40px"><i class="bx bx-plus"></i></button>
                                                     </div>
                                                 </td>
-                                            </tr>                                        
+                                            </tr>
                                             <tr class="border border-white">
                                                 <td colspan="2" class="text-end"><button type="submit"
                                                         id="" class="btn btn-primary">Simpan</button>

@@ -23,7 +23,7 @@
                             <div class="col card">
                                 <label class="card-title pt-3 ps-3 pb-0 h5">{{ $title }}</label>
                                 <div class="card-body">
-                                    <button class="btn btn-warning" id="btnInputPegawai">+ Tambah Siswa </button>
+                                    <button class="btn btn-warning" id="btnInputprasarana">+ Tambah Data Prasarana </button>
                                     {{-- FORM INPUT DATA PEGAWAI --}}
                                     <form action="/Data/prasarana" method="POST" id="" class="formInput">
                                         @csrf

@@ -25,21 +25,22 @@ use App\Http\Controllers\PrasaranaController;
 //     return view('welcome');
 // });
 
-Route::get('/', function(){return redirect('/login');});
+Route::get('/', function () {
+    return redirect('/login');
+});
 
-Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::resource('/register', RegisterController::class)->middleware('guest');
-Route::post('/login', [LoginController::class,'authenticate']);
-Route::post('/logout',[LoginController::class,'logout'])->middleware('auth');
-Route::get('/dashboard', [DashboardController::class,'index'])->middleware(('auth'));
-Route::get('/profile/sekolah/',[SekolahController::class,'editProfile'])->middleware('auth');
-Route::post('/profile/sekolah/',[SekolahController::class,'saveDataPelengkap'])->middleware('auth');
-Route::get('/profile/dataPelengkap/',[SekolahController::class,'editPelengkap'])->middleware('auth');
-Route::get('/Data/dataptk/',[PegawaiController::class,'index'])->middleware('auth');
-Route::post('/Data/Pegawai/',[PegawaiController::class,'store'])->middleware('auth');
-Route::get('/Data/Pegawai/',[PegawaiController::class,'update'])->middleware('auth');
-Route::get('/Data/datasiswa/',[SiswaController::class,'index'])->middleware('auth');
-Route::get('/Data/prasarana/',[PrasaranaController::class,'index'])->middleware('auth');
-Route::get('/Data/sanitasi/',[SanitasiController::class,'index'])->middleware('auth');
-Route::get('/profile/kontak/',[SekolahController::class,'editKontak'])->middleware('auth');
-
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(('auth'));
+Route::get('/profile/sekolah/', [SekolahController::class, 'editProfile'])->middleware('auth');
+Route::post('/profile/sekolah/', [SekolahController::class, 'saveDataPelengkap'])->middleware('auth');
+Route::get('/profile/dataPelengkap/', [SekolahController::class, 'editPelengkap'])->middleware('auth');
+Route::get('/Data/dataptk/', [PegawaiController::class, 'index'])->middleware('auth');
+Route::post('/Data/Pegawai/', [PegawaiController::class, 'store'])->middleware('auth');
+Route::get('/Data/Pegawai/', [PegawaiController::class, 'update'])->middleware('auth');
+Route::get('/Data/datasiswa/', [SiswaController::class, 'index'])->middleware('auth');
+Route::get('/Data/prasarana/', [PrasaranaController::class, 'index'])->middleware('auth');
+Route::get('/Data/sanitasi/', [SanitasiController::class, 'index'])->middleware('auth');
+Route::get('/profile/kontak/', [SekolahController::class, 'editKontak'])->middleware('auth');
