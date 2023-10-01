@@ -42,9 +42,9 @@
                         <form id="formAuthentication" class="mb-3" action="/login" method="POST">
                             @csrf
                             <div class="input-group mb-3">
-                                <input type="email" class="rounded @error('email') is-invalid @enderror"
-                                id="email" name="email"  required
-                                value="{{ old('email') }}" autofocus placeholder="example@gmail.com"/>
+                                <input type="email" class="rounded @error('email') is-invalid @enderror" id="email"
+                                    name="email" required value="{{ old('email') }}" autofocus
+                                    placeholder="example@gmail.com" />
                                 <label for="email" class="">example@gmail.com</label>
                                 @error('email')
                                     <div class="invalid-feedback">
@@ -53,15 +53,17 @@
                                 @enderror
                             </div>
                             <div class="mb-3 form-password-toggle">
-                                <div class="d-flex justify-content-between">                                    
+                                <div class="d-flex justify-content-between">
                                     <a href="auth-forgot-password-basic.html">
                                         <small>Lupa Password?</small>
-                                    </a>                                    
+                                    </a>
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="rounded" name="password"                                    
-                                        aria-describedby="password" required placeholder="Password"/>     
-                                        <span class="input-group-text cursor-pointer position-absolute top-50 end-0 translate-middle-y" style="background: none;border:none;"><i class="bx bx-hide"></i></span>                               
+                                    <input type="password" id="password" class="rounded" name="password"
+                                        aria-describedby="password" required placeholder="Password" />
+                                    <span
+                                        class="input-group-text cursor-pointer position-absolute top-50 end-0 translate-middle-y"
+                                        style="background: none;border:none;"><i class="bx bx-hide"></i></span>
                                     <label class="" for="password">Password</label>
                                 </div>
                             </div>
@@ -77,7 +79,9 @@
                         </form>
                         <p>
                         <div class="mb-3">
-                            <button class="btn btn-warning d-grid w-100" type="button">Halaman Tamu</button>
+                            <a href="../guest">
+                                <button class="btn btn-warning d-grid w-100" type="button">Halaman Tamu</button>
+                            </a>
                         </div>
                         </p>
 
